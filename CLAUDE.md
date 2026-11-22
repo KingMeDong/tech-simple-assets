@@ -113,10 +113,12 @@ owner — never silently deviate.
 ## 8. Setup roadmap
 
 1. [x] Workflow v0 written (this file).
-2. [ ] **Research:** What drives reach and engagement on Reels — algorithm
+2. [x] **Research:** What drives reach and engagement on Reels — algorithm
    signals, successful English tech channels, length, hook, pacing, posting
    times, captions and hashtags. Output: `docs/playbook.md` with a checklist
-   every video must pass.
+   every video must pass (source notes in `docs/research_notes/`).
+   *Owner review of the playbook's recommendations pending; approved points
+   will be merged into this file.*
 3. [ ] **Production pipeline:**
    - Video template (animated graphics, Ryan voice, synced on-screen text)
    - Automated spec check
@@ -151,3 +153,4 @@ analytics/                tracking data and reports (aggregated, no usernames)
 - **2026-11-22 · v0:** Initial decisions: English, Reels, Ryan voice, posting
   every 2 days, single public repo, owner approval before every post.
   Removed the German AirDrop carousel test.
+- **2026-11-22 · v0:** Research done; `docs/playbook.md` added (awaiting owner review).
