@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v0.1 (draft) · **Last updated:** 2026-11-22
+**Version:** v1 · **Last updated:** 2026-11-22
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -180,12 +180,21 @@ playbook explains them.
   weekday, CTA type, topic, music.
 - **Experiments:** Change one variable at a time, with at least 6 Reels per
   variant, in alternating order. The experiment list is in the playbook.
-- **Reports:** A report every 2 weeks. Reliable patterns need roughly 20–30 Reels.
+- **Reports:** A report every 2 weeks (every second Monday in the batch run,
+  first on 2026-12-07). Reliable patterns need roughly 20–30 Reels.
+- **How and when** (details in `analytics/README.md`): a follower snapshot
+  every day, a 72 h pull 3 days and a 7 d pull 7 days after each Reel, all in
+  the daily 17:31 run. Raw data goes to `analytics/metrics.csv` and
+  `followers.csv`; `analytics/report.py` computes the KPIs against our median.
+  The 72 h result is part of the daily status message.
 - **Trial Reels:** Not used until we have followers. At 200 followers, try one
   trial publish; if it is refused, retry at 1,000.
 
-## 8. Owner tasks in the Instagram app (not possible via the API)
+## 8. Owner tasks (in the Instagram app or outside our tools)
 
+- **Comments:** The owner answers comments personally (decision 2026-11-22).
+  Claude doesn't reply to comments.
+- **Windsor plan:** The owner handles the trial and any paid plan.
 - **Once:** Update the name field and bio with the text Claude provides.
 - **After Reel #1:** Check whether the in-app "AI info" label can be added to a
   Reel published through the API. Report back.
@@ -206,11 +215,13 @@ playbook explains them.
    - Reproducible environment setup
 4. [x] **Pilot Reel:** Reel 001 (AirDrop) published on 2026-11-22 via
    Windsor with jsDelivr URLs. It worked on the first try.
-5. [ ] **Analytics system:** Publishing log, metrics pull, report template.
+5. [x] **Analytics system:** Publishing log, follower snapshots, 72 h / 7 d
+   metrics pulls, `analytics/report.py` (KPIs vs. rolling median, variable
+   comparisons) and a two-weekly report.
 6. [x] **Automation:** Scheduled tasks for daily publishing (18:00), the
    morning news radar and the Mon/Thu production batches (section 6a).
 
-When all six are done, this file becomes **Workflow v1**.
+All six are done, so this file is **Workflow v1**.
 
 **Already verified:**
 - The Claude GitHub app has push access.
@@ -219,8 +230,10 @@ When all six are done, this file becomes **Workflow v1**.
 - Windsor `create_video_post` accepts jsDelivr-hosted MP4 + cover
   (media_id returned immediately; permalink readable via `get_data`).
 - The Windsor plan is currently **Trial** (not paid). `force_refresh` is not
-  available, so reads return cached data. What happens when the trial ends is
-  still to be checked with the owner.
+  available, so reads return cached data (`data_fetched_at` shows how fresh).
+  The owner is checking what happens when the trial ends.
+- Metrics read works (2026-11-22): reach, views, shares, saves, likes,
+  comments, average and total watch time, and skip rate per Reel.
 
 ## 10. Repo layout
 
@@ -281,3 +294,9 @@ analytics/                publishing log, metrics, reports (no usernames)
     45 MB repo-size check added: with 5–7 queued videos, the old size would
     have broken jsDelivr's 50 MB limit.
   - `tts.py` reads an optional per-Reel `length_scale` from `script.json`.
+- **2026-11-22 · v1:**
+  - Analytics system built (`analytics/README.md`, `metrics.csv`,
+    `followers.csv`, `report.py`). The daily run snapshots followers and pulls
+    72 h / 7 d metrics; the first two-weekly report is due 2026-12-07.
+  - The owner answers comments and handles the Windsor plan.
+  - All six roadmap items done: Workflow v1.
