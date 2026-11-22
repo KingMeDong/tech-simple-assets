@@ -1,0 +1,25 @@
+@font-face { font-family: "Inter"; font-weight: 500; src: url("FONTDIR/Inter-Medium.otf"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("FONTDIR/Inter-SemiBold.otf"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("FONTDIR/Inter-Bold.otf"); }
+@font-face { font-family: "Inter"; font-weight: 800; src: url("FONTDIR/Inter-ExtraBold.otf"); }
+
+html, body { margin: 0; padding: 0; background: #0B1426; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0B1426;
+  font-family: "Inter", sans-serif; color: #F4F1EA; }
+#stage svg { position: absolute; left: 0; top: 0; }
+.svgt { font-family: "Inter", sans-serif; font-weight: 700; font-size: 34px; }
+
+/* Safe zone: x 65-1015, y 270-1250. Top block starts at y 290. */
+#top { position: absolute; left: 80px; right: 80px; top: 290px; }
+.pill { display: inline-block; font-weight: 800; font-size: 32px; letter-spacing: 2px; color: #0B1426;
+  padding: 10px 24px; border-radius: 30px; margin-bottom: 22px; }
+.hl { font-weight: 800; line-height: 1.08; letter-spacing: -1px; }
+
+/* Captions: bottom of the safe zone */
+#caps { position: absolute; left: 70px; right: 70px; top: 1105px; height: 140px;
+  display: flex; align-items: center; justify-content: center; text-align: center; }
+.cap { font-weight: 800; font-size: 66px; line-height: 1.1; letter-spacing: -0.5px;
+  padding: 10px 26px; border-radius: 22px; background: rgba(11, 20, 38, 0.72); }
+.cw { color: rgba(244, 241, 234, 0.55); }
+.cw.on { color: #F4F1EA; }
+#extra { position: absolute; inset: 0; pointer-events: none; }

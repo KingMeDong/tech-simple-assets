@@ -1,0 +1,21 @@
+{
+  "id": "001-airdrop",
+  "title": "How AirDrop works without internet",
+  "series": "How it actually works #1",
+  "segments": [
+    {"id": "hook",   "text": "Your iPhone can send a photo to the phone next to you, with no internet at all. So how?", "pause": 0.35},
+    {"id": "s1a",    "text": "Step one: Bluetooth.", "pause": 0.25},
+    {"id": "s1b",    "text": "Your phone sends out a tiny Bluetooth Low Energy signal that says: I'm here. Nearby Apple devices hear it.", "pause": 0.2},
+    {"id": "s1c",    "text": "But Bluetooth Low Energy is much too slow for big files.", "pause": 0.35},
+    {"id": "s2a",    "text": "Step two: Wi-Fi, without a router.", "pause": 0.25},
+    {"id": "s2b",    "text": "The two phones open a direct Wi-Fi link, just between each other. No network, no internet. That's where your photo travels.", "pause": 0.35},
+    {"id": "s3",     "text": "Step three: before anything is sent, the phones create an encrypted connection.", "pause": 0.4},
+    {"id": "pay1",   "text": "So Bluetooth finds, and Wi-Fi delivers.", "pause": 0.25},
+    {"id": "pay2",   "text": "That's why AirDrop needs Wi-Fi turned on, even when you're not connected to any Wi-Fi network.", "pause": 0.3}
+  ],
+  "end_card_seconds": 2.0,
+  "sources": [
+    "https://support.apple.com/guide/security/sec2261183f4 (Apple Platform Security: AirDrop uses BLE for discovery, then peer-to-peer Wi-Fi without internet or access point, encrypted with TLS)",
+    "https://support.apple.com/HT204144 (Use AirDrop on iPhone: Wi-Fi and Bluetooth must be on, devices within about 30 feet / 10 m)"
+  ]
+}

@@ -81,7 +81,11 @@ playbook explains them.
   - Install with `pip install piper-tts`.
   - Voice files come from Hugging Face `rhasspy/piper-voices`
     (`en/en_US/ryan/high/`). They are not stored in the repo because of their size.
-- **Video:** ffmpeg (H.264 + AAC MP4). Visual pipeline: being built in setup step 3.
+- **Video pipeline:** `tools/reel/`.
+  - Piper voice, Whisper word timing and pronunciation QA.
+  - HTML/SVG scenes rendered frame by frame in headless Chromium, ffmpeg encode.
+  - Spec check: `tools/reel/check.py`.
+  - Usage is in `tools/reel/README.md`. On a fresh machine run `bash tools/reel/setup.sh` first.
 - **Fonts:** Inter (`tools/fonts/`, SIL Open Font License).
 
 ## 5. Instagram technical specs
