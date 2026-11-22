@@ -195,7 +195,8 @@ playbook explains them.
 - **Comments:** The owner answers comments personally (decision 2026-11-22).
   Claude doesn't reply to comments.
 - **Windsor plan:** The owner handles the trial and any paid plan.
-- **Once:** Update the name field and bio with the text Claude provides.
+- **Once (done 2026-11-22):** Name field "Tech Simple Explained · How tech
+  works" and bio with the AI-narration line, both verified via the API.
 - **After Reel #1:** Check whether the in-app "AI info" label can be added to a
   Reel published through the API. Report back.
 - **Weekly (about 5 min):**
