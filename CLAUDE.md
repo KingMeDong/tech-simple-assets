@@ -1,12 +1,16 @@
 # tech.simple.explained — Workflow
 
-**Version:** v0 (draft) · **Last updated:** 2026-11-22
+**Version:** v0.1 (draft) · **Last updated:** 2026-11-22
 
 This file is the single source of truth for how we run the channel. Every
-Claude session reads it first and follows it. It changes only with the
-owner's approval; every change is logged in the changelog at the bottom.
-If something here is outdated or blocks the work, propose an update to the
-owner — never silently deviate.
+Claude session reads it first and follows it. The owner has delegated content
+and workflow decisions to Claude (2026-11-22). Claude keeps this file current
+and logs every change in the changelog at the bottom. **The one thing that is
+never delegated: publishing requires the owner's explicit approval.**
+
+Detailed rules, evidence and the pre-publish checklist live in
+[`docs/playbook.md`](docs/playbook.md). This file states the decisions; the
+playbook explains them.
 
 ---
 
@@ -21,18 +25,21 @@ owner — never silently deviate.
 - **Audience:** The English-speaking world.
 - **Language:** All content in English (voiceover, on-screen text, captions,
   hashtags). Repo documents in English. Chat between owner and Claude in German.
-- **Format:** Short vertical videos (Reels) with voiceover and on-screen text.
-  Gripping and informative. Other formats (carousels, stories) only if the
-  data suggests it.
-- **Cadence:** One Reel every 2 days.
+- **Format:** Short vertical videos (Reels) with animated graphics, an AI
+  voiceover and burned-in captions. Default length 35–60 s, up to 90 s if the
+  topic needs it, never 3 minutes or more.
+- **Cadence:** One Reel every 2 days at **18:00 German time** (12:00 US Eastern,
+  17:00 UK), weekends included. Keep at least **3 finished Reels in the queue**.
 
 ## 2. Roles
 
-- **Owner:** Approves topics, scripts and every post before publishing. Has the
-  final say on this workflow.
-- **Claude:** Research, topic proposals, scripts, visuals, voiceover, video
-  editing, captions, hashtags, publishing (only after approval), analytics
-  and reports.
+- **Owner:**
+  - Approves every post before it is published (final video, caption, hashtags,
+    posting time).
+  - Can overrule any decision at any time.
+  - Does the tasks that only work in the Instagram app (section 8).
+- **Claude:** Decides topics, scripts, style and workflow. Does research,
+  production, captions, publishing (only after approval), analytics and reports.
 
 ## 3. Hard rules
 
@@ -42,91 +49,111 @@ owner — never silently deviate.
 2. **Claude cannot delete posts.** `delete_media` requires a Facebook-connected
    account; ours uses Instagram login. The owner deletes manually in the app if
    needed. Therefore quality checks before publishing must be thorough.
-3. **Facts must be correct.** Verify every claim. Simplify, but never state
-   something false.
+3. **Facts must be correct.** Verify every claim against a primary source.
+   Simplify, but never state something false.
 4. **This repo is public.** Never commit secrets, API keys, personal data or
    commenters' usernames. Aggregated statistics are fine.
-5. **Only original or properly licensed assets.** No copyrighted music, images
-   or footage.
+5. **Only original or properly licensed assets.** No third-party clips,
+   screenshots, product footage, watermarks or copyrighted music.
+6. **Disclose the AI voice on every Reel.**
+   - Caption line: "Voice: AI text-to-speech. Script written and fact-checked by a human."
+   - Bio line: "AI narration, human-written scripts."
+7. **Every Reel passes the pre-publish checklist** in `docs/playbook.md` before
+   it is shown to the owner for approval.
 
 ## 4. Tools and infrastructure
 
 - **Instagram access:** Windsor.ai MCP connector "Windsor.ai for Social Media"
   (free plan, Instagram login).
-  - Publish: `create_video_post` (Reels; supports `trial_params`, `cover_url`,
-    `thumb_offset`, `share_to_feed`), `create_carousel_post`,
-    `create_image_post`, `create_story`.
+  - Publish: `create_video_post` (Reels).
+    - Always set `share_to_feed=true` and a designed `cover_url`.
+    - No `trial_params` until eligible (see section 7).
   - Comments: create, reply, hide, unhide, delete.
   - Read: `get_data` — always look up field IDs with `get_fields` first.
+  - Not available on our setup: deleting posts, Instagram's music library,
+    collaborators on video posts, alt text on Reels, setting the AI label.
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
   - URL pattern: `https://raw.githubusercontent.com/KingMeDong/tech-simple-assets/main/<path>`
   - Before publishing, verify each URL returns HTTP 200 with the right content type.
 - **Git:** The owner has given standing permission to push to `main`.
-- **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**.
+- **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**, about
+  150–170 words per minute.
   - Install with `pip install piper-tts`.
   - Voice files come from Hugging Face `rhasspy/piper-voices`
     (`en/en_US/ryan/high/`). They are not stored in the repo because of their size.
-- **Video:** ffmpeg (H.264 + AAC MP4). Visual pipeline: to be defined in setup step 3.
+- **Video:** ffmpeg (H.264 + AAC MP4). Visual pipeline: being built in setup step 3.
 - **Fonts:** Inter (`tools/fonts/`, SIL Open Font License).
 
 ## 5. Instagram technical specs
 
-- **Reels:** MP4 or MOV, H.264 + AAC.
-  - Size: 9:16, 1080×1920 recommended.
-  - Length: 3 s to 15 min.
-  - File size: max 1 GB. GitHub allows max 100 MB per file, so aim for < 50 MB.
-- **Images:** JPEG, max 8 MB, aspect ratio 4:5 to 1.91:1.
-- **Caption:** Max 2,200 characters.
+- **Reels:** MP4, H.264 (yuv420p), AAC 48 kHz.
+  - Size: native 1080×1920, 30 fps, no borders.
+  - File size: keep under 50 MB (GitHub allows max 100 MB per file).
+  - Safe zone: keep all text and focal visuals inside x 65–1015 px and
+    y 270–1250 px.
+- **Cover:** JPEG 1080×1920, max 8 MB. The profile grid crops it to 3:4.
+- **Caption:** 30–90 words, max 2,200 characters. Use 3 hashtags; never more
+  than 5 (Instagram's cap).
 - **Music:** The API cannot add music from Instagram's library. Any music must
-  be royalty-free and baked into the video file.
+  be royalty-free and baked into the video file. It is optional.
 
-## 6. Per-post workflow (draft — finalized after setup steps 2–4)
+## 6. Per-post workflow
 
-1. **Topic:** Claude proposes topics based on the playbook and analytics → owner approves.
-2. **Script:** Hook, explanation steps, payoff, call to action → owner approves.
-3. **Production:** Visuals, voiceover, on-screen text, render.
-4. **Quality check:** Technical specs, facts, playbook checklist.
-5. **Preview to owner:** Video, caption, hashtags, planned posting time.
-6. **Upload:** Push to `main`, verify the public URL.
-7. **Publish:** Only after the owner says OK, via Windsor. Record the `media_id`.
-8. **Track:** Log metrics after 24 h and after 7 days.
+1. **Topic and script (Claude):** Pick the topic based on the playbook and
+   analytics. Write the script and verify every fact against primary sources.
+2. **Production (Claude):** Visuals, voiceover, captions, cover, render.
+3. **Quality check (Claude):** Run the playbook's pre-publish checklist and the
+   automated spec check.
+4. **Upload (Claude):** Push the video and cover to `main` and verify the
+   public URLs. Files sitting in the repo are not published yet.
+5. **Approval (owner):** Claude sends the video, cover, caption and planned
+   slot. The owner watches the video on a phone, once with sound and once
+   muted, and answers "OK" or asks for changes.
+6. **Publish (Claude):** Publish via Windsor at the planned slot. Record the
+   `media_id` in the publishing log.
+7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
 
-## 7. Analytics (draft)
+## 7. Analytics
 
-- **Per Reel:**
-  - `media_views`, `media_reach`
-  - `media_reel_skip_rate` (share of viewers who leave in the first 3 s)
-  - `media_reel_avg_watch_time`, `media_reel_total_watch_time`
-  - `media_total_like_count`, `media_total_comments_count`, `media_saved`,
-    `media_shares`, `media_reposts`
-- **Account:**
-  - `followers_count`, `reach_non_followers`
-  - `follower_count_1d` (only available from 100 followers)
-- **Attributes:** Each Reel is tagged with topic category, hook type, length,
-  voice and posting time, so results can be compared.
-- **Testing:** Change one variable at a time. Use Trial Reels
-  (`trial_params`, shown to non-followers only) for A/B tests of hooks.
-- **Reports:** A report every 2 weeks. Reliable patterns need roughly 8–10 posts.
-- **Not available through the API:** Retention curve (where exactly viewers
-  drop off) and follows gained per Reel.
+- **Main KPI:** shares ÷ reach. This is our proxy for "sends", which Instagram
+  weighs most for non-followers.
+- **Also tracked:** like rate, average watch time, skip rate (hook quality),
+  engagement rate, save rate, views ÷ reach (replays), follower change between
+  publishes.
+- **Benchmarks:** Judge every Reel against our own rolling median, not against
+  vendor benchmarks.
+- **Logging:** Each Reel's variables are logged: hook type, length, slot,
+  weekday, CTA type, topic, music.
+- **Experiments:** Change one variable at a time, with at least 6 Reels per
+  variant, in alternating order. The experiment list is in the playbook.
+- **Reports:** A report every 2 weeks. Reliable patterns need roughly 20–30 Reels.
+- **Trial Reels:** Not used until we have followers. At 200 followers, try one
+  trial publish; if it is refused, retry at 1,000.
 
-## 8. Setup roadmap
+## 8. Owner tasks in the Instagram app (not possible via the API)
+
+- **Once:** Update the name field and bio with the text Claude provides.
+- **After Reel #1:** Check whether the in-app "AI info" label can be added to a
+  Reel published through the API. Report back.
+- **Weekly (about 5 min):**
+  - Check Account Status to confirm the account is still eligible for
+    recommendations.
+  - Screenshot the retention curves of the best and the worst Reel of the week
+    and send them to Claude.
+
+## 9. Setup roadmap
 
 1. [x] Workflow v0 written (this file).
-2. [x] **Research:** What drives reach and engagement on Reels — algorithm
-   signals, successful English tech channels, length, hook, pacing, posting
-   times, captions and hashtags. Output: `docs/playbook.md` with a checklist
-   every video must pass (source notes in `docs/research_notes/`).
-   *Owner review of the playbook's recommendations pending; approved points
-   will be merged into this file.*
+2. [x] **Research:** Output is `docs/playbook.md` (source notes in
+   `docs/research_notes/`). Its decisions are merged into this file (v0.1).
 3. [ ] **Production pipeline:**
-   - Video template (animated graphics, Ryan voice, synced on-screen text)
+   - Video template (animated graphics, Ryan voice, synced captions, cover)
    - Automated spec check
-   - Reproducible environment setup (so new sessions are ready immediately)
-4. [ ] **Pilot Reel:** Run one Reel through the full workflow and publish it as
-   a Trial Reel. This tests the last untested step: Windsor/Instagram
+   - Reproducible environment setup
+4. [ ] **Pilot Reel:** Run one Reel through the full workflow as a normal
+   (non-trial) Reel. This tests the last untested step: Windsor/Instagram
    accepting a video.
-5. [ ] **Analytics system:** Tracking file and report template.
+5. [ ] **Analytics system:** Publishing log, metrics pull, report template.
 
 When all five are done, this file becomes **Workflow v1**.
 
@@ -135,15 +162,16 @@ When all five are done, this file becomes **Workflow v1**.
 - raw.githubusercontent.com URLs serve files publicly (HTTP 200, `image/jpeg`).
 - The default branch is `main`.
 
-## 9. Repo layout
+## 10. Repo layout
 
 ```
 CLAUDE.md                 this workflow
 README.md                 short public description
-docs/                     playbook, research notes
+docs/playbook.md          rules, evidence, pre-publish checklist, experiments
+docs/research_notes/      source notes behind the playbook
 tools/                    shared code: fonts, styles, render scripts
 reels/<NNN>-<slug>/       per Reel: script.md, video.mp4, cover.jpg, caption.txt
-analytics/                tracking data and reports (aggregated, no usernames)
+analytics/                publishing log, metrics, reports (no usernames)
 ```
 
 ---
@@ -153,4 +181,13 @@ analytics/                tracking data and reports (aggregated, no usernames)
 - **2026-11-22 · v0:** Initial decisions: English, Reels, Ryan voice, posting
   every 2 days, single public repo, owner approval before every post.
   Removed the German AirDrop carousel test.
-- **2026-11-22 · v0:** Research done; `docs/playbook.md` added (awaiting owner review).
+- **2026-11-22 · v0:** Research done; `docs/playbook.md` added.
+- **2026-11-22 · v0.1:**
+  - Owner delegated content and workflow decisions to Claude; publishing still
+    needs owner approval.
+  - Merged the playbook decisions: AI-voice disclosure, 18:00 German-time slot,
+    3-Reel queue, 35–60 s default length, caption and hashtag rules, metrics at
+    72 h and 7 d, owner's weekly in-app tasks.
+  - The pilot is a normal Reel because Trial Reels need 200+ followers.
+  - Topic and script approval by the owner removed; the owner approves only
+    the final post.
