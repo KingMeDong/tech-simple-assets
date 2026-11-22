@@ -68,7 +68,7 @@ playbook explains them.
 ## 4. Tools and infrastructure
 
 - **Instagram access:** Windsor.ai MCP connector "Windsor.ai for Social Media"
-  (free plan, Instagram login).
+  (Trial plan, Instagram login).
   - Publish: `create_video_post` (Reels).
     - Always set `share_to_feed=true` and a designed `cover_url`.
     - No `trial_params` until eligible (see section 7).
@@ -164,13 +164,12 @@ playbook explains them.
 1. [x] Workflow v0 written (this file).
 2. [x] **Research:** Output is `docs/playbook.md` (source notes in
    `docs/research_notes/`). Its decisions are merged into this file (v0.1).
-3. [ ] **Production pipeline:**
+3. [x] **Production pipeline:**
    - Video template (animated graphics, Ryan voice, synced captions, cover)
    - Automated spec check
    - Reproducible environment setup
-4. [ ] **Pilot Reel:** Run one Reel through the full workflow as a normal
-   (non-trial) Reel. This tests the last untested step: Windsor/Instagram
-   accepting a video.
+4. [x] **Pilot Reel:** Reel 001 (AirDrop) published on 2026-11-22 via
+   Windsor with jsDelivr URLs. It worked on the first try.
 5. [ ] **Analytics system:** Publishing log, metrics pull, report template.
 
 When all five are done, this file becomes **Workflow v1**.
@@ -179,6 +178,11 @@ When all five are done, this file becomes **Workflow v1**.
 - The Claude GitHub app has push access.
 - raw.githubusercontent.com URLs serve files publicly (HTTP 200, `image/jpeg`).
 - The default branch is `main`.
+- Windsor `create_video_post` accepts jsDelivr-hosted MP4 + cover
+  (media_id returned immediately; permalink readable via `get_data`).
+- The Windsor plan is currently **Trial** (not paid). `force_refresh` is not
+  available, so reads return cached data. What happens when the trial ends is
+  still to be checked with the owner.
 
 ## 10. Repo layout
 
@@ -213,3 +217,5 @@ analytics/                publishing log, metrics, reports (no usernames)
   - Pipeline built (`tools/reel/`) and pilot Reel 001 produced.
   - New default opening: the spoken and on-screen topic question first
     (owner feedback on the pilot).
+  - Pilot Reel 001 published (owner asked to post immediately as a test,
+    off-slot). Publishing log started in `analytics/publishing-log.md`.
