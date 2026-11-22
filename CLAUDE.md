@@ -223,3 +223,6 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-22 · v0.1:** Topic backlog started in `docs/topic-backlog.md`
   (12 ideas, queue priority: QR code, tap-to-pay, Wi-Fi in the kitchen).
   Topics are now picked from that list.
+- **2026-11-22 · v0.1:** Reel 002 (QR code) produced. Piper speed default
+  changed from `LENGTH_SCALE` 1.05 (measured 203 wpm) to 1.38 (~168 wpm) to
+  meet the 150–170 wpm rule.
