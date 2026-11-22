@@ -17,11 +17,12 @@ the row to `awaiting approval`.
 | Mon 2026-11-23 18:00 | 002-qr-code | evergreen | approved | 2026-11-22, 833a45a |
 | Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a |
 | Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a |
-| Thu 2026-11-26 18:00 | from Mon batch (share topic) | evergreen | planned | — |
+| Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | in production | — |
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a |
-| Sat 2026-11-28 18:00 | from Mon batch | evergreen | planned | — |
-| Sun 2026-11-29 18:00 | from Mon batch | evergreen | planned | — |
+| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | in production | — |
+| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | in production | — |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
-Mon 2026-11-23 (Thu, Sat, Sun slots).
+006–008 started on 2026-11-22 (owner asked to fill Thu/Sat/Sun now).
+Next regular batch: Mon 2026-11-23 (slots from Mon 2026-11-30).
