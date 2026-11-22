@@ -1,0 +1,24 @@
+{
+  "id": "006-song-recognition",
+  "title": "How a song-recognition app works",
+  "series": "How it actually works #6",
+  "segments": [
+    {"id": "hook",  "text": "How does an app recognise a song in seconds?", "pause": 0.3},
+    {"id": "twist", "text": "It throws away almost all of the music.", "pause": 0.45},
+    {"id": "s1",    "text": "Step one: it turns the sound into a spectrogram, a picture of which pitches are loud at each moment.", "pause": 0.4},
+    {"id": "s2",    "text": "Step two: it keeps only the loudest peaks. What's left looks like a map of stars.", "pause": 0.4},
+    {"id": "s3a",   "text": "Step three: it joins pairs of stars into fingerprints: two pitches, and the time between them.", "pause": 0.3},
+    {"id": "s3b",   "text": "Then it looks them up in a huge library of songs.", "pause": 0.3},
+    {"id": "s3c",   "text": "The match is the song where your fingerprints line up at the same spacing. Even if only one or two percent survive the noise, it can still find it.", "pause": 0.4},
+    {"id": "pay",   "text": "So it isn't listening to the tune. It's matching stars.", "pause": 0.3},
+    {"id": "cta",   "text": "Send this to a music lover.", "pause": 0.1}
+  ],
+  "end_card_seconds": 0.05,
+  "sources": [
+    "Avery Li-Chun Wang (Shazam Entertainment), 'An Industrial-Strength Audio Search Algorithm', ISMIR 2003, https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf: spectrogram peaks chosen by amplitude reduce 'a complicated spectrogram' to 'a sparse set of coordinates' called 'constellation maps' because they 'often resemble a star field' (2.1)",
+    "Same paper 2.2: 'pairs of time-frequency points are combinatorially associated. Anchor points are chosen, each anchor point having a target zone'; each hash is built from the two frequencies and the time difference between the points",
+    "Same paper 2.3: hashes are searched in the database; for the matching song, matching features 'occur at similar relative offsets' and form 'a diagonal line within the scatterplot'; the score is the number of matching, time-aligned hashes",
+    "Same paper 3.1: 'from a heavily corrupted 15 second sample, a statistically significant match can be determined with only about 1-2% of the generated hash tokens actually surviving'",
+    "Same paper 1 and 3.1: users sample up to 15 seconds; tests used 15, 10 and 5 second excerpts (basis for 'in seconds')"
+  ]
+}

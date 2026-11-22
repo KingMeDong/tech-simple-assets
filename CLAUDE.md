@@ -308,3 +308,10 @@ analytics/                publishing log, metrics, reports (no usernames)
   published via the API, so it is now an owner task after every publish
   (reminder in the daily status message). The owner's earlier test post is
   being deleted.
+- **2026-11-22 · v1:**
+  - Reels 006–008 produced (Thu/Sat/Sun slots).
+  - `lib.js` `T.word()` now normalises apostrophes on both sides; `render.py`
+    warns about any word it can't find. This fixed a sync error in Reel 002:
+    the ✗ appeared about 0.5 s before the corner square was covered.
+  - The publish run now always publishes the files and caption from the
+    **approved commit**, never newer unapproved versions on `main`.

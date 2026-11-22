@@ -14,13 +14,13 @@ the row to `awaiting approval`.
 | Slot (German time) | Reel | Type | Status | Approved (date, commit) |
 |---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) |
-| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | approved | 2026-11-22, 833a45a |
+| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | approved | 2026-11-22, 833a45a (a fixed version is on main, awaiting re-approval; until then the 833a45a version is published) |
 | Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a |
 | Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a |
-| Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | in production | — |
+| Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | awaiting approval | — |
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a |
-| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | in production | — |
-| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | in production | — |
+| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | awaiting approval | — |
+| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | awaiting approval | — |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:

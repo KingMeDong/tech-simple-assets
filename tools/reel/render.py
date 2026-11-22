@@ -78,6 +78,9 @@ def main():
                 stage.screenshot(path=str(build / f"still-{float(s):05.1f}.png"))
             page.evaluate("renderCover()")
             stage.screenshot(path=str(build / "still-cover.png"))
+            misses = page.evaluate("window.WORD_MISSES ? [...window.WORD_MISSES] : []")
+            if misses:
+                print("WARNING: T.word() found no match (fell back to segment start):", ", ".join(misses))
             browser.close()
             if errors:
                 raise SystemExit("JS errors: " + "; ".join(errors))
@@ -107,7 +110,10 @@ def main():
                 print(f"frame {i}/{n}", flush=True)
         ff.stdin.close()
         ff.wait()
+        misses = page.evaluate("window.WORD_MISSES ? [...window.WORD_MISSES] : []")
         browser.close()
+        if misses:
+            print("WARNING: T.word() found no match (fell back to segment start):", ", ".join(misses))
         if errors:
             raise SystemExit("JS errors: " + "; ".join(errors))
         if ff.returncode:

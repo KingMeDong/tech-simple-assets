@@ -1,0 +1,5 @@
+How does an app recognise a song in seconds?
+It turns the sound into a spectrogram, keeps only the loudest peaks and throws the rest away. Pairs of those peaks become fingerprints, and the right song is the one whose fingerprints line up at the same spacing. Even if only 1 to 2% survive a noisy room, the match still holds. That's the method Shazam published in 2003.
+Send this to a music lover.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #shazam #howitworks
