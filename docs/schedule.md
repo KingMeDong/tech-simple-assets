@@ -14,11 +14,11 @@ the row to `awaiting approval`.
 | Slot (German time) | Reel | Type | Status | Approved (date, commit) |
 |---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) |
-| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | awaiting approval | — |
-| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | awaiting approval | — |
-| Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | awaiting approval | — |
+| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | approved | 2026-11-22, 833a45a |
+| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a |
+| Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a |
 | Thu 2026-11-26 18:00 | from Mon batch (share topic) | evergreen | planned | — |
-| Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | awaiting approval | — |
+| Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a |
 | Sat 2026-11-28 18:00 | from Mon batch | evergreen | planned | — |
 | Sun 2026-11-29 18:00 | from Mon batch | evergreen | planned | — |
 

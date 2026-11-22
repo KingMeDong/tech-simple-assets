@@ -108,7 +108,7 @@ playbook explains them.
 
 - **Reels:** MP4, H.264 (yuv420p), AAC 48 kHz.
   - Size: native 1080×1920, 30 fps, no borders.
-  - File size: keep under 20 MB (jsDelivr per-file limit; a 60 s Reel is about 7–10 MB).
+  - File size: keep under 20 MB (jsDelivr per-file limit; at CRF 25 a 50 s Reel is about 5 MB).
   - Safe zone: keep all text and focal visuals inside x 65–1015 px and
     y 270–1250 px.
 - **Cover:** JPEG 1080×1920, max 8 MB. The profile grid crops it to 3:4.
