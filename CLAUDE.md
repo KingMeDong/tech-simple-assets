@@ -28,6 +28,10 @@ playbook explains them.
 - **Format:** Short vertical videos (Reels) with animated graphics, an AI
   voiceover and burned-in captions. Default length 35–60 s, up to 90 s if the
   topic needs it, never 3 minutes or more.
+- **Opening (owner's preference, default from Reel #2):** The first spoken
+  words are the topic question, and the on-screen title shows the same
+  question, e.g. "How does AirDrop work?". A curiosity twist follows
+  immediately (e.g. "…with no internet at all?").
 - **Cadence:** One Reel every 2 days at **18:00 German time** (12:00 US Eastern,
   17:00 UK), weekends included. Keep at least **3 finished Reels in the queue**.
 
@@ -205,3 +209,7 @@ analytics/                publishing log, metrics, reports (no usernames)
   - The pilot is a normal Reel because Trial Reels need 200+ followers.
   - Topic and script approval by the owner removed; the owner approves only
     the final post.
+- **2026-11-22 · v0.1:**
+  - Pipeline built (`tools/reel/`) and pilot Reel 001 produced.
+  - New default opening: the spoken and on-screen topic question first
+    (owner feedback on the pilot).
