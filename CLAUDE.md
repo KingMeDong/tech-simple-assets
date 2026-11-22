@@ -158,8 +158,13 @@ playbook explains them.
     day. Not approved by 17:30: it moves to the next day, or is dropped once
     the moment has passed. Aim to be live within 48 h of the event.
   - All hard rules and the full pre-publish checklist still apply.
-- **Publishing at 18:00** needs a running Claude session. A scheduled task for
-  daily publishing and the morning radar is on the roadmap (section 9).
+- **Scheduled tasks** (set up 2026-11-22 with the owner's go; they fire into
+  the main Claude session, times in German time):
+  - **Daily Reel publish, 17:31:** waits until 18:00 and publishes today's
+    Reel only if `docs/schedule.md` marks it approved. Then it updates the log,
+    pulls due 72 h / 7 d metrics and checks the queue.
+  - **Morning tech news radar, 07:47:** topical fast lane.
+  - **Reel batch production, Mon + Thu 09:13.**
 
 ## 7. Analytics
 
@@ -201,8 +206,8 @@ playbook explains them.
 4. [x] **Pilot Reel:** Reel 001 (AirDrop) published on 2026-11-22 via
    Windsor with jsDelivr URLs. It worked on the first try.
 5. [ ] **Analytics system:** Publishing log, metrics pull, report template.
-6. [ ] **Automation:** A scheduled task that publishes the approved Reel at
-   18:00 every day, and one for the morning news radar (needs owner OK).
+6. [x] **Automation:** Scheduled tasks for daily publishing (18:00), the
+   morning news radar and the Mon/Thu production batches (section 6a).
 
 When all six are done, this file becomes **Workflow v1**.
 
@@ -266,3 +271,6 @@ analytics/                publishing log, metrics, reports (no usernames)
     target 5–7.
   - Topical fast lane for current events added (section 6a).
   - Slot plan and approvals now live in `docs/schedule.md`.
+- **2026-11-22 · v0.1:** Owner gave the go for automation. Scheduled tasks
+  created: daily publish (17:31 → 18:00), morning news radar (07:47), batch
+  production (Mon + Thu 09:13). Per-Reel approval is unchanged.
