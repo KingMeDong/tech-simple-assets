@@ -1,6 +1,7 @@
 # tech-simple-assets
 
-Öffentliches Bild-Hosting für den Instagram-Kanal **@tech.simple.explained**.
-Die Bilder werden per `raw.githubusercontent.com`-URL an Instagram übergeben.
+Assets and workflow for the Instagram channel **@tech.simple.explained**:
+everyday technology, explained simply.
 
-Struktur: `posts/<nr>-<thema>/slide-<n>.jpg`
+Media files in this repo are served to Instagram via `raw.githubusercontent.com`.
+See [CLAUDE.md](CLAUDE.md) for the full workflow.
