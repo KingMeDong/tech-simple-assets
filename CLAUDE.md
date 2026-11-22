@@ -77,7 +77,8 @@ playbook explains them.
   - Comments: create, reply, hide, unhide, delete.
   - Read: `get_data` — always look up field IDs with `get_fields` first.
   - Not available on our setup: deleting posts, Instagram's music library,
-    collaborators on video posts, alt text on Reels, setting the AI label.
+    collaborators on video posts, alt text on Reels, setting the AI label
+    (the owner sets it in the app after publishing, section 8).
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
   - **Publish URLs use jsDelivr, pinned to the commit SHA:**
     `https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@<commit-sha>/reels/<NNN>-<slug>/video.mp4`
@@ -197,8 +198,10 @@ playbook explains them.
 - **Windsor plan:** The owner handles the trial and any paid plan.
 - **Once (done 2026-11-22):** Name field "Tech Simple Explained · How tech
   works" and bio with the AI-narration line, both verified via the API.
-- **After Reel #1:** Check whether the in-app "AI info" label can be added to a
-  Reel published through the API. Report back.
+- **After every publish (about 30 s):** Add Meta's in-app "AI info" label to
+  the new Reel (playbook A2). Verified on Reel #1: the label can be added to
+  Reels published through the API. Claude's daily status message reminds the
+  owner.
 - **Weekly (about 5 min):**
   - Check Account Status to confirm the account is still eligible for
     recommendations.
@@ -301,3 +304,7 @@ analytics/                publishing log, metrics, reports (no usernames)
     72 h / 7 d metrics; the first two-weekly report is due 2026-12-07.
   - The owner answers comments and handles the Windsor plan.
   - All six roadmap items done: Workflow v1.
+- **2026-11-22 · v1:** AI label verified: it can be added in the app to Reels
+  published via the API, so it is now an owner task after every publish
+  (reminder in the daily status message). The owner's earlier test post is
+  being deleted.
