@@ -27,6 +27,16 @@ The next Reels, in production order:
 
 1. **#02 QR code** (produced, awaiting approval: `reels/002-qr-code/`) · 2. **#03 Tap-to-pay** · 3. **#04 Wi-Fi in the kitchen**
 
+## Topical lane
+
+Current events that fit the channel (rules: `CLAUDE.md` section 6a). Claude
+adds candidates from the morning radar; a "go" is produced the same day and
+takes the next 18:00 slot.
+
+| Date spotted | Event | Hook question | Primary sources | Decision |
+|---|---|---|---|---|
+| — | — | — | — | — |
+
 ## Ideas
 
 | # | Status | Hook question (title + first words) | Twist | Visual idea | Claims to verify | Slot fit |

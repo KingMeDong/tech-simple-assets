@@ -32,8 +32,10 @@ playbook explains them.
   words are the topic question, and the on-screen title shows the same
   question, e.g. "How does AirDrop work?". A curiosity twist follows
   immediately (e.g. "…with no internet at all?").
-- **Cadence:** One Reel every 2 days at **18:00 German time** (12:00 US Eastern,
-  17:00 UK), weekends included. Keep at least **3 finished Reels in the queue**.
+- **Cadence (owner decision 2026-11-22):** One Reel **every day** at **18:00
+  German time** (12:00 US Eastern, 17:00 UK), weekends included. Never skip a
+  slot, never double-post. Production rhythm, queue and the topical fast lane
+  are in section 6a.
 
 ## 2. Roles
 
@@ -131,6 +133,34 @@ playbook explains them.
    `video.mp4` from `main`.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
 
+## 6a. Production rhythm, queue and topical fast lane
+
+- **Batch production:** Claude produces Reels in two batches a week, on
+  **Monday and Thursday** (3–4 Reels each), and sends each batch to the owner
+  in one go. The owner approves Reel by Reel.
+- **Queue:** At least **3 approved Reels** ready at all times; target 5–7
+  (about a week). If it drops below 3, Claude produces an extra batch at once.
+- **Schedule and approvals:** `docs/schedule.md` lists every slot, its Reel
+  and its approval. Claude marks a Reel approved only after the owner's
+  explicit "OK" in chat, and only Reels marked approved are ever published.
+- **Topical fast lane:** Current events that fit the channel jump the queue.
+  - **Radar:** Claude checks the news every morning.
+  - **A topic fits when** many people are using or hearing about the tech
+    right now (a feature launch or update, a big outage, a viral tech moment,
+    a seasonal habit), the "how does it work?" question has a clear answer,
+    and the facts are confirmed by primary sources (official announcements,
+    status pages, documentation).
+  - **Never:** rumours or leaks, speculation about causes, politics, health
+    effects, money advice, tragedies, brand bashing. No third-party footage or
+    logos (hard rule 5).
+  - **Fast path:** produce the same day → owner approval → publish in the next
+    18:00 slot. The topical Reel takes that slot and the queue moves back one
+    day. Not approved by 17:30: it moves to the next day, or is dropped once
+    the moment has passed. Aim to be live within 48 h of the event.
+  - All hard rules and the full pre-publish checklist still apply.
+- **Publishing at 18:00** needs a running Claude session. A scheduled task for
+  daily publishing and the morning radar is on the roadmap (section 9).
+
 ## 7. Analytics
 
 - **Main KPI:** shares ÷ reach. This is our proxy for "sends", which Instagram
@@ -171,8 +201,10 @@ playbook explains them.
 4. [x] **Pilot Reel:** Reel 001 (AirDrop) published on 2026-11-22 via
    Windsor with jsDelivr URLs. It worked on the first try.
 5. [ ] **Analytics system:** Publishing log, metrics pull, report template.
+6. [ ] **Automation:** A scheduled task that publishes the approved Reel at
+   18:00 every day, and one for the morning news radar (needs owner OK).
 
-When all five are done, this file becomes **Workflow v1**.
+When all six are done, this file becomes **Workflow v1**.
 
 **Already verified:**
 - The Claude GitHub app has push access.
@@ -190,7 +222,8 @@ When all five are done, this file becomes **Workflow v1**.
 CLAUDE.md                 this workflow
 README.md                 short public description
 docs/playbook.md          rules, evidence, pre-publish checklist, experiments
-docs/topic-backlog.md     Reel ideas, status and queue priority
+docs/topic-backlog.md     Reel ideas, status, queue priority, topical lane
+docs/schedule.md          daily slots, assigned Reels, owner approvals
 docs/research_notes/      source notes behind the playbook
 tools/                    shared code: fonts, styles, render scripts
 reels/<NNN>-<slug>/       per Reel: script.md, video.mp4, cover.jpg, caption.txt
@@ -226,3 +259,10 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-22 · v0.1:** Reel 002 (QR code) produced. Piper speed default
   changed from `LENGTH_SCALE` 1.05 (measured 203 wpm) to 1.38 (~168 wpm) to
   meet the 150–170 wpm rule.
+- **2026-11-22 · v0.1:**
+  - Cadence changed from every 2 days to **daily** at 18:00 German time
+    (owner decision).
+  - Production in two weekly batches (Mon, Thu); queue of ≥3 approved Reels,
+    target 5–7.
+  - Topical fast lane for current events added (section 6a).
+  - Slot plan and approvals now live in `docs/schedule.md`.
