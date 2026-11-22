@@ -73,8 +73,17 @@ playbook explains them.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label.
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
-  - URL pattern: `https://raw.githubusercontent.com/KingMeDong/tech-simple-assets/main/<path>`
-  - Before publishing, verify each URL returns HTTP 200 with the right content type.
+  - **Publish URLs use jsDelivr, pinned to the commit SHA:**
+    `https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@<commit-sha>/reels/<NNN>-<slug>/video.mp4`
+    (same pattern for `cover.jpg`). jsDelivr serves the correct content types
+    (`video/mp4`, `image/jpeg`).
+  - raw.githubusercontent.com serves MP4 as `application/octet-stream`, so it
+    is only a fallback (`https://raw.githubusercontent.com/KingMeDong/tech-simple-assets/main/<path>`).
+  - Before publishing, verify each URL returns HTTP 200, the right content
+    type and the same byte size as the local file.
+  - jsDelivr does not serve GitHub repos larger than 50 MB. Keep video files
+    under 20 MB and **delete a Reel's `video.mp4` from `main` once Instagram
+    has published it** (git history keeps it).
 - **Git:** The owner has given standing permission to push to `main`.
 - **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**, about
   150–170 words per minute.
@@ -92,7 +101,7 @@ playbook explains them.
 
 - **Reels:** MP4, H.264 (yuv420p), AAC 48 kHz.
   - Size: native 1080×1920, 30 fps, no borders.
-  - File size: keep under 50 MB (GitHub allows max 100 MB per file).
+  - File size: keep under 20 MB (jsDelivr per-file limit; a 60 s Reel is about 7–10 MB).
   - Safe zone: keep all text and focal visuals inside x 65–1015 px and
     y 270–1250 px.
 - **Cover:** JPEG 1080×1920, max 8 MB. The profile grid crops it to 3:4.
@@ -113,8 +122,9 @@ playbook explains them.
 5. **Approval (owner):** Claude sends the video, cover, caption and planned
    slot. The owner watches the video on a phone, once with sound and once
    muted, and answers "OK" or asks for changes.
-6. **Publish (Claude):** Publish via Windsor at the planned slot. Record the
-   `media_id` in the publishing log.
+6. **Publish (Claude):** Publish via Windsor at the planned slot, using the
+   jsDelivr URLs. Record the `media_id` in the publishing log. Then delete
+   `video.mp4` from `main`.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
 
 ## 7. Analytics

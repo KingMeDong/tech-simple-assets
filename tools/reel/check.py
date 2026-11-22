@@ -10,7 +10,7 @@ from pathlib import Path
 
 from PIL import Image
 
-MAX_MB = 50
+MAX_MB = 20  # jsDelivr per-file limit
 
 
 def probe(path: Path) -> dict:
