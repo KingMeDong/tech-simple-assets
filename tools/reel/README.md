@@ -15,7 +15,8 @@ python3 tools/reel/check.py  reels/001-airdrop             # spec check (must be
 1. **`tts.py`**
    - Synthesizes each script segment with Piper (`en_US-ryan-high`).
      `LENGTH_SCALE` defaults to 1.38, about 168 wpm including pauses; override
-     it with the `LENGTH_SCALE` environment variable.
+     it per Reel with `"length_scale"` in `script.json` (or the `LENGTH_SCALE`
+     environment variable).
    - Transcribes the result with faster-whisper (`small.en`) to get word timings.
    - The transcript doubles as a pronunciation check: script words the
      recognizer did not hear are listed under `qa.unheard_script_words`.

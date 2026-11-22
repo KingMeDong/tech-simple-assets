@@ -1,0 +1,5 @@
+Why is your Wi-Fi slower in the kitchen?
+Microwave ovens heat food with radio waves at 2.45 GHz, right inside the 2.4 GHz band that Wi-Fi uses. The metal box keeps almost all of it in, but a typical oven makes around 1,000 watts, so even a small leak can drown out your Wi-Fi while it runs. Your router's 5 GHz band is far away from that frequency.
+Save this for the next time your video call freezes.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #wifi #howitworks

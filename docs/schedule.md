@@ -15,12 +15,13 @@ the row to `awaiting approval`.
 |---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) |
 | Mon 2026-11-23 18:00 | 002-qr-code | evergreen | awaiting approval | — |
-| Tue 2026-11-24 18:00 | 003 tap-to-pay | evergreen | planned | — |
-| Wed 2026-11-25 18:00 | 004 Wi-Fi in the kitchen | evergreen | planned | — |
-| Thu 2026-11-26 18:00 | 005 (from backlog) | evergreen | planned | — |
-| Fri 2026-11-27 18:00 | 006 (from backlog) | evergreen | planned | — |
-| Sat 2026-11-28 18:00 | 007 (from backlog) | evergreen | planned | — |
-| Sun 2026-11-29 18:00 | 008 (from backlog) | evergreen | planned | — |
+| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | awaiting approval | — |
+| Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | awaiting approval | — |
+| Thu 2026-11-26 18:00 | from Mon batch (share topic) | evergreen | planned | — |
+| Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | awaiting approval | — |
+| Sat 2026-11-28 18:00 | from Mon batch | evergreen | planned | — |
+| Sun 2026-11-29 18:00 | from Mon batch | evergreen | planned | — |
 
-**Production batches:** Mon and Thu. Next batch: now (003–005), to rebuild
-the queue for the switch to daily posting.
+**Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
+003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
+Mon 2026-11-23 (Thu, Sat, Sun slots).

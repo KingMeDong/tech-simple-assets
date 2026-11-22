@@ -1,0 +1,5 @@
+How does tap to pay work?
+Your contactless payment card has no battery. A coil in the terminal creates a magnetic field that reaches just a few centimetres, a loop antenna inside the card turns it into power for the chip, and the chip answers with a one-time code for that payment. Phones go further and send a token instead of your real card number.
+Send this to the friend who thinks their card has a battery.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #contactless #nfc

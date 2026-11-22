@@ -1,0 +1,5 @@
+How does Face ID work in the dark?
+Face ID uses invisible infrared light. A dot projector covers your face in thousands of infrared dots, and the TrueDepth camera turns them into a 3D depth map. A protected part of the chip compares it with the face you set up, so a flat photo can't unlock your phone, and your face data never leaves the device.
+Face ID or passcode: which do you use?
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #faceid #iphonetips

@@ -79,6 +79,13 @@ def main(reel_dir: str):
     else:
         check("caption.txt exists", False)
 
+    # jsDelivr refuses GitHub refs larger than 50 MB: all files on main (incl. queued videos) must stay below 45 MB.
+    root = Path(__file__).resolve().parents[2]
+    tracked = subprocess.run(["git", "-C", str(root), "ls-files", "-z"], capture_output=True).stdout.decode().split("\0")
+    files = {root / f for f in tracked if f} | set(root.glob("reels/*/video.mp4")) | set(root.glob("reels/*/cover.jpg"))
+    tree_mb = sum(f.stat().st_size for f in files if f.exists()) / 1e6
+    check("repo tree < 45 MB (jsDelivr 50 MB limit)", tree_mb < 45, f"{tree_mb:.1f} MB")
+
     width = max(len(n) for _, n, _ in results)
     for ok, name, detail in results:
         print(f"{'PASS' if ok else 'FAIL'}  {name.ljust(width)}  {detail}")

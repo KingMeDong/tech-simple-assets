@@ -87,9 +87,10 @@ playbook explains them.
     is only a fallback (`https://raw.githubusercontent.com/KingMeDong/tech-simple-assets/main/<path>`).
   - Before publishing, verify each URL returns HTTP 200, the right content
     type and the same byte size as the local file.
-  - jsDelivr does not serve GitHub repos larger than 50 MB. Keep video files
-    under 20 MB and **delete a Reel's `video.mp4` from `main` once Instagram
-    has published it** (git history keeps it).
+  - jsDelivr does not serve GitHub repos larger than 50 MB. Videos are
+    encoded at CRF 25 (about 5 MB per 50 s), `check.py` fails if all files on
+    `main` exceed 45 MB, and **a Reel's `video.mp4` is deleted from `main` once
+    Instagram has published it** (git history keeps it).
 - **Git:** The owner has given standing permission to push to `main`.
 - **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**, about
   150–170 words per minute.
@@ -274,3 +275,9 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-22 · v0.1:** Owner gave the go for automation. Scheduled tasks
   created: daily publish (17:31 → 18:00), morning news radar (07:47), batch
   production (Mon + Thu 09:13). Per-Reel approval is unchanged.
+- **2026-11-22 · v0.1:**
+  - Reels 003–005 produced (extra batch for daily posting).
+  - Video encode changed to CRF 25 (about half the size, SSIM 0.998) and a
+    45 MB repo-size check added: with 5–7 queued videos, the old size would
+    have broken jsDelivr's 50 MB limit.
+  - `tts.py` reads an optional per-Reel `length_scale` from `script.json`.
