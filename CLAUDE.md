@@ -116,8 +116,8 @@ playbook explains them.
 
 ## 6. Per-post workflow
 
-1. **Topic and script (Claude):** Pick the topic based on the playbook and
-   analytics. Write the script and verify every fact against primary sources.
+1. **Topic and script (Claude):** Pick the topic from `docs/topic-backlog.md`,
+   based on the playbook and analytics. Write the script and verify every fact against primary sources.
 2. **Production (Claude):** Visuals, voiceover, captions, cover, render.
 3. **Quality check (Claude):** Run the playbook's pre-publish checklist and the
    automated spec check.
@@ -190,6 +190,7 @@ When all five are done, this file becomes **Workflow v1**.
 CLAUDE.md                 this workflow
 README.md                 short public description
 docs/playbook.md          rules, evidence, pre-publish checklist, experiments
+docs/topic-backlog.md     Reel ideas, status and queue priority
 docs/research_notes/      source notes behind the playbook
 tools/                    shared code: fonts, styles, render scripts
 reels/<NNN>-<slug>/       per Reel: script.md, video.mp4, cover.jpg, caption.txt
@@ -219,3 +220,6 @@ analytics/                publishing log, metrics, reports (no usernames)
     (owner feedback on the pilot).
   - Pilot Reel 001 published (owner asked to post immediately as a test,
     off-slot). Publishing log started in `analytics/publishing-log.md`.
+- **2026-11-22 · v0.1:** Topic backlog started in `docs/topic-backlog.md`
+  (12 ideas, queue priority: QR code, tap-to-pay, Wi-Fi in the kitchen).
+  Topics are now picked from that list.
