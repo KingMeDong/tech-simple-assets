@@ -235,10 +235,10 @@ Every Reel must pass all items. Rule IDs point to the evidence above.
 16. Audio is present, and any music is royalty-free, licensed for commercial social use, mixed into the file and kept under the voice (A7).
 17. The file is MP4 H.264 with yuv420p, 30 fps, closed GOP, faststart, AAC 48 kHz 128 kbps and ≤25 Mbps. It is under 50 MB and plays from its public hosting URL (V13).
 18. The cover JPEG is 1080×1920, sRGB and ≤8 MB, uses the series template, and has a 3–5-word keyword title inside the central ~1010×1350 px. Its public `cover_url` is set (V12).
-19. Someone has watched the final file in full on a phone, once with sound and once muted. Remember that it can't be deleted via the API (Windsor constraints).
+19. Claude has reviewed the final render (frame sheets, transcript check) and sent the owner a preview; since 2026-11-23 the owner may watch it on a phone but no approval is required. Remember that it can't be deleted via the API (Windsor constraints).
 20. The caption is 30–90 words: it opens with the question in search words, then 2–3 keyword sentences, one topic-specific CTA, the AI-voice line and three specific hashtags (five at most) (C1–C4, A1).
 21. Publish parameters: `share_to_feed=true`, `cover_url` set, no `trial_params` until eligibility is confirmed, and `user_tags` only for real, relevant accounts (G4).
-22. The slot is 18:00 German time (or the assigned test slot), 24 h after the previous Reel, the Reel is marked approved in `docs/schedule.md`, and the slot has been checked against any daylight-saving gap (T1–T5).
+22. The slot is 18:00 German time (or the assigned test slot), 24 h after the previous Reel, the Reel is marked `ready` (or `approved`) in `docs/schedule.md` and not vetoed by the owner, and the slot has been checked against any daylight-saving gap (T1–T5).
 23. The publishing log has the Reel's variables (hook type, length, slot, weekday, CTA type, topic, music), and the current follower count has been noted for the follow proxy (M1).
 
 ## Open questions and experiments

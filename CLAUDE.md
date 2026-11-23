@@ -1,12 +1,13 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.1 · **Last updated:** 2026-11-23
+**Version:** v1.2 · **Last updated:** 2026-11-23
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
 and workflow decisions to Claude (2026-11-22). Claude keeps this file current
-and logs every change in the changelog at the bottom. **The one thing that is
-never delegated: publishing requires the owner's explicit approval.**
+and logs every change in the changelog at the bottom. **Since 2026-11-23 the
+owner has also delegated publishing:** Claude publishes finished Reels at the
+agreed slots without per-Reel approval. The owner keeps a veto (hard rule 1).
 
 Detailed rules, evidence and the pre-publish checklist live in
 [`docs/playbook.md`](docs/playbook.md). This file states the decisions; the
@@ -44,18 +45,22 @@ playbook explains them.
 ## 2. Roles
 
 - **Owner:**
-  - Approves every post before it is published (final video, caption, hashtags,
-    posting time).
+  - Gets a preview of every Reel for information and can veto it ("Stopp
+    <NNN>") until it goes live. No approval is needed (since 2026-11-23).
   - Can overrule any decision at any time.
   - Does the tasks that only work in the Instagram app (section 8).
 - **Claude:** Decides topics, scripts, style and workflow. Does research,
-  production, captions, publishing (only after approval), analytics and reports.
+  production, captions, publishing at the agreed slots, analytics and reports.
 
 ## 3. Hard rules
 
-1. **Never publish without explicit owner approval** of the exact final video,
-   caption and hashtags. Instagram has no draft mode — publishing goes live
-   immediately.
+1. **Publish only what passed every check, and respect the owner's veto.**
+   Owner decision 2026-11-23: Claude publishes at the agreed slots without
+   per-Reel approval. A Reel goes live only if the full pre-publish checklist,
+   the primary-source fact check and every automated check passed. Otherwise
+   Claude holds it and tells the owner. The owner still gets every preview and
+   can stop any Reel ("Stopp <NNN>"). Instagram has no draft mode and Claude
+   cannot delete posts, so the quality gate replaces the approval.
 2. **Claude cannot delete posts.** `delete_media` requires a Facebook-connected
    account; ours uses Instagram login. The owner deletes manually in the app if
    needed. Therefore quality checks before publishing must be thorough.
@@ -168,16 +173,17 @@ playbook explains them.
    automated spec check.
 4. **Upload (Claude):** Push the video and cover to `main` and verify the
    public URLs. Files sitting in the repo are not published yet.
-5. **Approval (owner):** Claude sends the video, cover, caption and planned
-   slot. The owner watches the video on a phone, once with sound and once
-   muted, and answers "OK" or asks for changes.
+5. **Preview (owner, optional):** Claude sends the video, cover, caption,
+   YouTube title and planned slot for information. No answer is needed. The
+   owner can ask for changes or veto with "Stopp <NNN>" until the Reel goes
+   live.
 6. **Publish (Claude):**
    - Publish via Windsor at the planned slot, using the jsDelivr URLs, and
      record the `media_id` in the publishing log. Then delete `video.mp4`
      from `main`.
    - Then put the same video on YouTube as a Short (section 4: Zapier, or the
      owner by hand until Zapier works) and record the YouTube link.
-   - The owner's approval covers both platforms, so every preview includes
+   - Publishing covers both platforms, so every preview includes
      `youtube.txt`.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
 
@@ -185,15 +191,16 @@ playbook explains them.
 
 - **Batch production:** Claude produces Reels in two batches a week, on
   **Monday and Thursday** (3–4 Reels each), and sends each batch to the owner
-  in one go. The owner approves Reel by Reel.
-- **Queue:** At least **3 approved Reels** ready at all times; target 5–7
+  in one go as a preview (no approval needed; veto possible).
+- **Queue:** At least **3 ready Reels** at all times; target 5–7
   (about a week). If it drops below 3, Claude produces an extra batch at once.
   `main` holds at most about 8 unpublished videos (45 MB limit), so a batch
   only adds as many videos as fit; the rest wait until published videos
   leave `main`.
-- **Schedule and approvals:** `docs/schedule.md` lists every slot, its Reel
-  and its approval. Claude marks a Reel approved only after the owner's
-  explicit "OK" in chat, and only Reels marked approved are ever published.
+- **Schedule:** `docs/schedule.md` lists every slot, its Reel and its status.
+  Claude marks a Reel `ready` (with the commit) once it passed all checks and
+  its URLs are verified. Only `ready` or `approved` Reels are published, never
+  one marked `hold` or vetoed by the owner.
 - **Topical fast lane:** Current events that fit the channel jump the queue.
   - **Radar:** Claude checks the news every morning.
   - **A topic fits when** many people are using or hearing about the tech
@@ -204,15 +211,17 @@ playbook explains them.
   - **Never:** rumours or leaks, speculation about causes, politics, health
     effects, money advice, tragedies, brand bashing. No third-party footage or
     logos (hard rule 5).
-  - **Fast path:** produce the same day → owner approval → publish in the next
-    18:00 slot. The topical Reel takes that slot and the queue moves back one
-    day. Not approved by 17:30: it moves to the next day, or is dropped once
-    the moment has passed. Aim to be live within 48 h of the event.
+  - **Fast path:** produce the same day, send the owner a preview, publish in
+    the next 18:00 slot (the owner can veto until then). The topical Reel takes
+    that slot and the queue moves back one day. If it isn't ready by 17:30, it
+    moves to the next day, or is dropped once the moment has passed. Aim to be
+    live within 48 h of the event.
   - All hard rules and the full pre-publish checklist still apply.
 - **Scheduled tasks** (set up 2026-11-22 with the owner's go; they fire into
   the main Claude session, times in German time):
   - **Daily Reel publish, 17:31:** waits until 18:00 and publishes today's
-    Reel only if `docs/schedule.md` marks it approved. Then it updates the log,
+    Reel if `docs/schedule.md` marks it `ready` or `approved` and the owner
+    hasn't vetoed it. Then it updates the log,
     pulls due 72 h / 7 d metrics and checks the queue.
   - **Morning tech news radar, 07:47:** topical fast lane.
   - **Reel batch production, Mon + Thu 09:13.**
@@ -400,3 +409,9 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-23 · v1.1:** Zapier connected (Stage 2) and tested with a private
   upload, which worked. The daily run now uploads the Short via Zapier after
   checking the public feed. Windsor is used for Instagram only.
+- **2026-11-23 · v1.2:** **Owner decision: publishing no longer needs
+  per-Reel approval.** Claude publishes at the agreed slots on Instagram and
+  YouTube. Safeguards: the quality gate (checklist, primary-source facts,
+  automated checks; on any failure the Reel is held) and the owner's veto
+  ("Stopp <NNN>") on the preview of every Reel. Schedule status `ready`
+  replaces `awaiting approval`.

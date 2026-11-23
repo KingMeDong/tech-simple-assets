@@ -3,20 +3,17 @@
 One Reel a day at **18:00 German time** (`CLAUDE.md` sections 1 and 6a).
 Claude keeps this file current.
 
-**YouTube (Workflow v1.1):** after the Instagram publish, the same video goes to
-YouTube Shorts (via Zapier) with the title and description from `youtube.txt`. The owner's
-OK covers both platforms; Reels approved before v1.1 need a separate OK for
-their YouTube text.
+**Publishing rule (owner decision 2026-11-23, Workflow v1.2):** No per-Reel
+approval is needed. A Reel is published at its slot, on Instagram and then
+YouTube, if its row says `ready` (or `approved`) with the commit of the exact
+files that passed every check. The files and captions published are always the
+ones at that commit. The owner gets every preview and can veto with
+"Stopp <NNN>"; Claude then sets the row to `hold`.
 
-**Approval rule:** A Reel is published only if its row says `approved` with
-the date of the owner's explicit "OK" in chat, for the exact files at the
-commit listed. Any change to the video, cover or caption after approval resets
-the row to `awaiting approval`.
+**Status values:** `planned` → `in production` → `ready` (or `approved`,
+before v1.2) → `published`; or `hold` (failed a check or vetoed).
 
-**Status values:** `planned` → `in production` → `awaiting approval` →
-`approved` → `published` (media ID in `analytics/publishing-log.md`).
-
-| Slot (German time) | Reel | Type | Status | Approved (date, commit) | YouTube text (`youtube.txt`) |
+| Slot (German time) | Reel | Type | Status | Ready/approved (date, commit) | YouTube text (`youtube.txt`) |
 |---|---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) | published 2026-11-23 22:30 by hand ([Short](https://www.youtube.com/shorts/XS9UBGAi0AE)) |
 | Mon 2026-11-23 18:00 | 002-qr-code | evergreen | published 18:29 ([Reel](https://www.instagram.com/reel/DgF6up5AqZy/)) | 2026-11-22, 833a45a (published version; the later fix was not approved in time) | published 2026-11-23 22:39 by hand ([Short](https://www.youtube.com/shorts/TqQAoaGj_9o)) |
