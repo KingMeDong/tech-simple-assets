@@ -15,3 +15,4 @@ Metrics live in `analytics/metrics.md` (72 h and 7 d pulls).
 | Reel | Published (German time) | Video ID | Link | Uploaded by | Note |
 |---|---|---|---|---|---|
 | 001-airdrop | 2026-11-23 22:30 | XS9UBGAi0AE | https://www.youtube.com/shorts/XS9UBGAi0AE | owner, by hand | Title "How does AirDrop work with no Internet" (owner adjusted it after upload); Windsor `upload_video` was rate-limited 3 times (support ref 54691726) |
+| 002-qr-code | 2026-11-23 22:39 | TqQAoaGj_9o | https://www.youtube.com/shorts/TqQAoaGj_9o | owner, by hand | Title from youtube.txt |
