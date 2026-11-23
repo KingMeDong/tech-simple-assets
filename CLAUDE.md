@@ -88,8 +88,13 @@ playbook explains them.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label
     (the owner sets it in the app after publishing, section 8).
-- **YouTube access:** Windsor cannot upload to YouTube. Uploads go through
-  the **Zapier** connector (action "YouTube: Upload Video").
+- **YouTube access:** Windsor's `youtube` connector **does** have an
+  `upload_video` action (from a public URL; title, description, made_for_kids,
+  privacy, optional `publish_at`). Checked on 2026-11-23; the earlier note that
+  Windsor cannot upload was wrong. The channel "tech.simple.explained" is
+  connected (Windsor youtube account `118382`; check `channel_title` before
+  every upload). The first two uploads were rate-limited by YouTube; until one
+  succeeds, Zapier or a manual upload by the owner is the fallback.
   - **Video URL:** the same jsDelivr URL pinned to the approved commit. It
     keeps working after `video.mp4` is deleted from `main`.
   - **Until Zapier is connected:** the owner uploads by hand in the YouTube
@@ -364,3 +369,6 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-23 · v1.1:** Reel 002 published (18:29, 29 min late: worker
   restart plus a Windsor timeout while Instagram processed the video). Rule
   added in section 4: no blind retries after a publish timeout.
+- **2026-11-23 · v1.1:** YouTube channel connected to Windsor (`upload_video`
+  available, so Zapier isn't needed). The first upload attempts were
+  rate-limited by YouTube; a retry is scheduled.
