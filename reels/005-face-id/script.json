@@ -1,0 +1,58 @@
+{
+  "id": "005-face-id",
+  "title": "How Face ID works in the dark",
+  "series": "How it actually works #5",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "How does Face ID work in the dark?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "It covers your face in thousands of invisible dots.",
+      "pause": 0.45
+    },
+    {
+      "id": "s1",
+      "text": "Step one: infrared light. Your eyes can't see it, but your phone's infrared camera can, so it works even in total darkness.",
+      "pause": 0.45
+    },
+    {
+      "id": "s2a",
+      "text": "Step two: a dot projector paints thousands of infrared dots onto your face.",
+      "pause": 0.3
+    },
+    {
+      "id": "s2b",
+      "text": "The first Face ID iPhone used more than thirty thousand.",
+      "pause": 0.3
+    },
+    {
+      "id": "s2c",
+      "text": "From those dots, your phone builds a 3D depth map of your face.",
+      "pause": 0.45
+    },
+    {
+      "id": "s3a",
+      "text": "Step three: a protected part of the chip turns that map into numbers, and compares them with the face you set up.",
+      "pause": 0.35
+    },
+    {
+      "id": "s3b",
+      "text": "That's why a photo can't unlock it: a photo has no depth.",
+      "pause": 0.45
+    },
+    {
+      "id": "pay",
+      "text": "And your face data never leaves your phone. Not even Apple can see it.",
+      "pause": 0.2
+    }
+  ],
+  "end_card_seconds": 2.0,
+  "sources": [
+    "https://support.apple.com/en-us/102381 (Apple, 'About Face ID advanced technology', read 2026-11-22): TrueDepth camera 'projecting and analyzing thousands of invisible dots to create a depth map of your face and also captures an infrared image'; a portion of the neural engine 'protected within the Secure Enclave' turns depth map + infrared image into 'a mathematical representation and compares that representation to the enrolled facial data'; 'designed to work indoors, outdoors, and even in total darkness'; 'Face ID always requires depth information, which isn't found in print or 2D digital photographs'; 'Face ID data doesn't leave your device, is never available to iOS or iPadOS, apps, or Apple'",
+    "https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/ (Apple Newsroom, iPhone X launch, 2017-09-12): TrueDepth camera 'made up of a dot projector, infrared camera and flood illuminator'; 'Face ID projects more than 30,000 invisible IR dots'",
+    "Note: Apple's current support article says 'thousands' of dots without a number; the 30,000+ figure is stated only for the first Face ID iPhone (iPhone X, 2017), and the script says exactly that."
+  ]
+}

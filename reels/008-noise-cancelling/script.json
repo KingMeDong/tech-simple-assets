@@ -1,0 +1,58 @@
+{
+  "id": "008-noise-cancelling",
+  "title": "How noise-cancelling headphones work",
+  "series": "How it actually works #8",
+  "length_scale": 1.32,
+  "length_scale_note": "1.32 keeps this script inside 150-170 wpm (1.38 gave 150.8 wpm).",
+  "pronunciation_notes": "'noise-cancelling' (hyphen) is spoken as 'noise-gancelling'; written 'noise cancelling' is clear. 'Where the noise pushes the air' was heard as 'Whether noise'; replaced by 'When the noise squeezes the air'.",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "How do noise cancelling headphones work?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "They don't just block noise. They add sound, to make silence.",
+      "pause": 0.45
+    },
+    {
+      "id": "s1",
+      "text": "Step one: a tiny microphone on the outside listens to the noise around you.",
+      "pause": 0.4
+    },
+    {
+      "id": "s2a",
+      "text": "Step two: a chip flips the sound wave upside down, and the speaker plays it into your ear. It's called anti-noise.",
+      "pause": 0.35
+    },
+    {
+      "id": "s2b",
+      "text": "When the noise squeezes the air, the anti-noise wave stretches it. The two waves cancel each other out.",
+      "pause": 0.45
+    },
+    {
+      "id": "s3a",
+      "text": "Step three, the catch: this works best on steady, low sounds, like the hum of an engine or an air conditioner.",
+      "pause": 0.3
+    },
+    {
+      "id": "s3b",
+      "text": "Sudden sounds, like a barking dog, and voices are harder to copy, so some of them still get through.",
+      "pause": 0.45
+    },
+    {
+      "id": "pay",
+      "text": "So your headphones don't just block noise. They play its exact opposite.",
+      "pause": 0.2
+    }
+  ],
+  "end_card_seconds": 1.4,
+  "sources": [
+    "https://support.apple.com/en-us/108918 (Apple: 'an outward-facing microphone or microphones detect external sounds, which your AirPods ... then counter with anti-noise, canceling the external sounds before you hear them. An inward-facing microphone listens inside your ear for unwanted internal sounds')",
+    "https://www.apple.com/newsroom/2019/10/apple-reveals-new-airpods-pro-available-october-30/ (Apple: outward-facing microphone detects external sound; AirPods Pro 'create an equivalent anti-noise that cancels out background noise before it reaches the listener's ear')",
+    "https://www.bose.com/stories/what-is-active-noise-cancellation (Bose: microphones 'read and analyze the sounds around you and emit opposite signals to cancel noise when the sound waves collide'; 'ANC generally works best for steady low-frequency sounds, like the hum of an air conditioner or passing traffic ... not as effectively, especially against sudden and sharp background noise, like a dog barking or horn beeping')",
+    "https://www.bose.com/stories/how-do-noise-cancelling-headphones-work (Bose: 'voices are harder to cancel than steady background noise because they change quickly and cover a wider range of sound. Some speech may still come through'; ANC uses 'digital processing to generate an opposing signal'; works together with the physical seal)",
+    "http://hyperphysics.phy-astr.gsu.edu/hbase/Sound/interf.html (Georgia State University HyperPhysics: two sound waves interfere; 'destructive interference if they are \"out of phase\" and subtract')"
+  ]
+}

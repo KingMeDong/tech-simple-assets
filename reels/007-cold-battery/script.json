@@ -1,0 +1,23 @@
+{
+  "id": "007-cold-battery",
+  "title": "Why your phone dies faster in the cold",
+  "series": "How it actually works #7",
+  "segments": [
+    {"id": "hook",  "text": "Why does your phone die faster in the cold?", "pause": 0.3},
+    {"id": "twist", "text": "Here's the twist: the battery isn't empty. The charge is just stuck.", "pause": 0.45},
+    {"id": "s1",    "text": "Step one: inside the battery, lithium ions swim through a liquid from one side to the other. Each ion that crosses lets an electron flow through your phone.", "pause": 0.45},
+    {"id": "s2",    "text": "Step two: in the cold, that liquid gets thicker, like syrup. The ions slow down, and the battery's resistance goes up.", "pause": 0.45},
+    {"id": "s3a",   "text": "Step three, the surprise: when your phone suddenly needs a burst of power, the slow battery can't deliver it fast enough.", "pause": 0.35},
+    {"id": "s3b",   "text": "So your phone shuts down to protect itself, even though there's still charge inside.", "pause": 0.45},
+    {"id": "pay",   "text": "Warm it back up, and the charge comes back.", "pause": 0.3},
+    {"id": "cta",   "text": "Save this for winter.", "pause": 0.1}
+  ],
+  "end_card_seconds": 0.6,
+  "sources": [
+    "https://support.apple.com/en-us/105105 (Apple, Charge and maintain your iPhone battery: 'When using your device in a very cold environment, you might notice a decrease in battery life. This condition is temporary; when the battery's temperature returns to its normal operating range, its performance will return to normal.')",
+    "https://support.apple.com/en-us/118431 (Apple, If your iPhone or iPad gets too hot or too cold: designed for ambient 0º to 35º C (32º to 95º F); 'very cold conditions outside of its operating range might temporarily shorten battery life and could cause your device to turn off. Battery life will return to normal when you bring your device back to higher ambient temperatures.')",
+    "https://support.apple.com/en-us/101575 (Apple, iPhone battery and performance: electronics must draw instantaneous power; 'A battery with a high impedance might not be able to provide sufficient power'; 'A battery's impedance will temporarily increase at a low state of charge and in a cold temperature environment ... common to all lithium-ion batteries'; 'the system will perform a shutdown to preserve these electronic components'; unexpected shutdowns more likely 'when you're in colder temperatures')",
+    "https://www.nature.com/articles/s42004-025-01564-5 (Communications Chemistry 2025 review: 'Low temperatures severely impair LIB performance by slowing ion transfer, increasing internal resistance, and reducing electrolyte conductivity'; 'bulk ionic conductivity decreases, limiting the transport of lithium ions between the electrodes'; carbonate electrolytes 'suffer from increased viscosity')",
+    "Each Li+ crossing the electrolyte is balanced by one electron through the external circuit (basic Li-ion cell operation; same review, intercalation/redox description)"
+  ]
+}

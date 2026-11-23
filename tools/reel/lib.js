@@ -30,8 +30,12 @@ function makeT(tl) {
     narrationEnd: tl.narration_seconds,
     total: tl.total_seconds,
     // time when a given word (first occurrence, case-insensitive) is spoken inside a segment
+    // Both sides are normalised the same way, so "can't" and "cant" both match.
+    // A miss falls back to the segment start and is reported by render.py.
     word: (segId, w) => {
-      const x = tl.words.find(o => o.seg === segId && o.w.toLowerCase().replace(/[^a-z0-9-]/g, "").startsWith(w.toLowerCase()));
+      const n = s => s.toLowerCase().replace(/[^a-z0-9-]/g, "");
+      const x = tl.words.find(o => o.seg === segId && n(o.w).startsWith(n(w)));
+      if (!x) (window.WORD_MISSES = window.WORD_MISSES || new Set()).add(`${segId}:${w}`);
       return x ? x.start : segs[segId].start;
     },
   };

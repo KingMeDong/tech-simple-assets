@@ -21,7 +21,7 @@ from piper import PiperVoice, SynthesisConfig
 
 VOICE_DIR = Path(os.environ.get("PIPER_VOICE_DIR", Path.home() / ".local/share/piper-voices"))
 VOICE = "en_US-ryan-high"
-LENGTH_SCALE = 1.05   # >1 = slower; tuned so Ryan lands at ~160-170 wpm
+LENGTH_SCALE = float(os.environ.get("LENGTH_SCALE", 1.38))  # >1 = slower; 1.38 = ~167 wpm incl. pauses (1.05 measured 203 wpm on Reel 002)
 LEAD_IN = 0.08        # seconds of silence before the first word
 
 
@@ -36,7 +36,8 @@ def norm(w: str) -> str:
 
 def synthesize(script: dict):
     voice = PiperVoice.load(str(VOICE_DIR / f"{VOICE}.onnx"))
-    cfg = SynthesisConfig(length_scale=LENGTH_SCALE)
+    # Per-Reel override: "length_scale" in script.json (e.g. Reels with long spoken numbers).
+    cfg = SynthesisConfig(length_scale=float(script.get("length_scale", LENGTH_SCALE)))
     sr = voice.config.sample_rate
     pieces = [np.zeros(int(LEAD_IN * sr), dtype=np.int16)]
     t = LEAD_IN

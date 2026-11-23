@@ -78,6 +78,9 @@ def main():
                 stage.screenshot(path=str(build / f"still-{float(s):05.1f}.png"))
             page.evaluate("renderCover()")
             stage.screenshot(path=str(build / "still-cover.png"))
+            misses = page.evaluate("window.WORD_MISSES ? [...window.WORD_MISSES] : []")
+            if misses:
+                print("WARNING: T.word() found no match (fell back to segment start):", ", ".join(misses))
             browser.close()
             if errors:
                 raise SystemExit("JS errors: " + "; ".join(errors))
@@ -95,7 +98,7 @@ def main():
                "-i", str(build / "narration.wav"),
                "-filter_complex", "[1:a]aresample=48000,apad[a]",
                "-map", "0:v", "-map", "[a]",
-               "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "8M", "-bufsize", "16M",
+               "-c:v", "libx264", "-preset", "slow", "-crf", "25", "-maxrate", "3M", "-bufsize", "6M",  # ~5 MB per 50 s: keeps the repo under jsDelivr's 50 MB limit
                "-pix_fmt", "yuv420p", "-r", str(FPS), "-g", str(FPS * 2), "-flags", "+cgop",
                "-profile:v", "high", "-c:a", "aac", "-b:a", "128k", "-ac", "2",
                "-shortest", "-movflags", "+faststart", str(out)]
@@ -107,7 +110,10 @@ def main():
                 print(f"frame {i}/{n}", flush=True)
         ff.stdin.close()
         ff.wait()
+        misses = page.evaluate("window.WORD_MISSES ? [...window.WORD_MISSES] : []")
         browser.close()
+        if misses:
+            print("WARNING: T.word() found no match (fell back to segment start):", ", ".join(misses))
         if errors:
             raise SystemExit("JS errors: " + "; ".join(errors))
         if ff.returncode:

@@ -13,8 +13,10 @@ python3 tools/reel/check.py  reels/001-airdrop             # spec check (must be
 ## How it works
 
 1. **`tts.py`**
-   - Synthesizes each script segment with Piper (`en_US-ryan-high`,
-     `LENGTH_SCALE` tuned to about 165–170 wpm).
+   - Synthesizes each script segment with Piper (`en_US-ryan-high`).
+     `LENGTH_SCALE` defaults to 1.38, about 168 wpm including pauses; override
+     it per Reel with `"length_scale"` in `script.json` (or the `LENGTH_SCALE`
+     environment variable).
    - Transcribes the result with faster-whisper (`small.en`) to get word timings.
    - The transcript doubles as a pronunciation check: script words the
      recognizer did not hear are listed under `qa.unheard_script_words`.
@@ -41,4 +43,4 @@ python3 tools/reel/check.py  reels/001-airdrop             # spec check (must be
   Captions sit at y ≈ 1105–1245.
 
 Build outputs (`build/`) are git-ignored. Only `video.mp4` and `cover.jpg` are
-committed, because Instagram fetches them from raw.githubusercontent.com.
+committed, because Instagram fetches them from their public jsDelivr URLs.

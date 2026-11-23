@@ -1,0 +1,63 @@
+{
+  "id": "004-wifi-kitchen",
+  "title": "Why your Wi-Fi is slower in the kitchen",
+  "series": "How it actually works #4",
+  "length_scale": 1.28,
+  "length_scale_note": "tts.py reads length_scale from this file. At the 1.38 default this number-heavy script measured 143.5 wpm (below the 150-170 rule).",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Why is your Wi-Fi slower in the kitchen?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "Often, it's your microwave. It uses the same radio band as your Wi-Fi.",
+      "pause": 0.35
+    },
+    {
+      "id": "s1",
+      "text": "Step one: Wi-Fi sends data as radio waves, often on the two point four gigahertz band.",
+      "pause": 0.3
+    },
+    {
+      "id": "s2",
+      "text": "Step two: a microwave heats food with radio waves too, at two point four five gigahertz, right inside that band.",
+      "pause": 0.35
+    },
+    {
+      "id": "s3a",
+      "text": "Step three, the surprise: the metal box keeps almost all of it in, but a little gets out.",
+      "pause": 0.25
+    },
+    {
+      "id": "s3b",
+      "text": "And your microwave makes around a thousand watts. Your router sends with one watt, at most.",
+      "pause": 0.25
+    },
+    {
+      "id": "s3c",
+      "text": "So even that little leak can drown out your Wi-Fi while it runs.",
+      "pause": 0.35
+    },
+    {
+      "id": "pay",
+      "text": "The fix: use your router's five gigahertz band, far away from the microwave's frequency.",
+      "pause": 0.2
+    },
+    {
+      "id": "cta",
+      "text": "Save this for later.",
+      "pause": 0.1
+    }
+  ],
+  "end_card_seconds": 0.5,
+  "sources": [
+    "https://support.apple.com/en-us/102319 (Apple: avoid using wireless devices near common sources of interference such as microwave ovens; 'Both Bluetooth and Wi-Fi devices use the 2.4 GHz band, but many Wi-Fi devices can use the 5 GHz band instead.')",
+    "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-18/subpart-C/section-18.301 (FCC: ISM frequency 2450 MHz ± 50 MHz) and section 18.107 (domestic microwave ovens are consumer ISM equipment)",
+    "https://www.midea.com/content/dam/midea-aem/us/commercial-kitchen/0-9-cu-ft-1000w-push-button-commercial-microwave/FINAL%20MIDEA%201025F1A%20spec%20sheet.pdf (manufacturer spec: frequency 2450 MHz, 1000 W microwave output)",
+    "https://lg.com/us/business/download/resources/CT00021979/MSER0990S_LG_Pro_Builder_Spec_Sheet%5B20241015_214425%5D.pdf (LG countertop microwave: 1,000 W microwave power output)",
+    "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-C/section-15.247 (FCC: digital modulation in 2400-2483.5 MHz limited to 1 watt output power)",
+    "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-oven-radiation (FDA: microwaves are reflected by metal; a federal standard limits the amount of microwaves that can leak from an oven)"
+  ]
+}
