@@ -88,25 +88,22 @@ playbook explains them.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label
     (the owner sets it in the app after publishing, section 8).
-- **YouTube access:** Windsor's `youtube` connector **does** have an
-  `upload_video` action (from a public URL; title, description, made_for_kids,
-  privacy, optional `publish_at`). Checked on 2026-11-23; the earlier note that
-  Windsor cannot upload was wrong. The channel "tech.simple.explained" is
-  connected (Windsor youtube account `118382`; check `channel_title` before
-  every upload). All three API uploads on 2026-11-23 were rejected with
-  "YouTube rate-limited the upload" (channel at 0 videos, phone-verified);
-  Windsor support asked (ref 54691726). The owner's manual upload worked, so
-  the channel itself is fine.
-  - **Plan (2026-11-23):**
-    - **Step 1 (active):** The daily run tries Windsor `upload_video`
-      **exactly once** per Reel, after checking the channel's public feed for
-      an existing upload. On any error the owner gets the links for a manual
-      upload.
-    - **Step 2:** If Windsor keeps failing, connect Zapier at
-      claude.ai/customize/connectors and move the automation to a new
-      session (connectors load at session start).
-    - **Step 3:** Last resort: our own Google Cloud project for the YouTube
-      Data API.
+- **YouTube access:** Uploads go through the **Zapier** connector
+  (claude.ai connector, loaded in the main session since 2026-11-23).
+  - Action: `execute_zapier_write_action`, selected_api `YouTubeV4CLIAPI`,
+    action `upload_video` (tool `youtube_upload_video`). The default
+    connection is the channel "tech.simple.explained" (channel ID
+    `UCSsTlgx8fGEp-GPJWu8X6CA`); check `channelTitle` in the result.
+  - Params: `title`, `description`, `video` (the pinned jsDelivr URL),
+    `privacy_status` "public", `made_for_kids` "false", `notify_subscribers`
+    "true", `category_id` "28" (Science & Technology).
+  - Tested 2026-11-23 with a private test upload: it worked on the first try.
+  - **Before uploading, check the free public feed**
+    (`https://www.youtube.com/feeds/videos.xml?channel_id=UCSsTlgx8fGEp-GPJWu8X6CA`)
+    so nothing is uploaded twice. Don't spend Zapier tasks on extra reads.
+  - Windsor's `youtube` connector also lists `upload_video`, but YouTube
+    rejected all three attempts with "rate-limited" (support ref 54691726).
+    It is not used.
   - **Video URL:** the same jsDelivr URL pinned to the approved commit. It
     keeps working after `video.mp4` is deleted from `main`.
   - **Manual fallback:** the owner uploads by hand in the YouTube app, using
@@ -118,8 +115,8 @@ playbook explains them.
     person, no altered real footage and no realistic invented scene; the AI
     voice is disclosed in the description instead.
   - **Audience:** "not made for kids".
-  - **Zapier free plan:** about 100 tasks/month. Verify the actual usage per
-    upload.
+  - **Zapier free plan:** 100 tasks/month, and each successful call costs
+    2 tasks. One upload a day is about 60 tasks/month.
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
   - **Publish URLs use jsDelivr, pinned to the commit SHA:**
     `https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@<commit-sha>/reels/<NNN>-<slug>/video.mp4`
@@ -400,3 +397,6 @@ analytics/                publishing log, metrics, reports (no usernames)
   per Reel in the daily run, with a feed check against duplicates and a manual
   fallback; Zapier or our own Google Cloud project only if Windsor keeps
   failing.
+- **2026-11-23 · v1.1:** Zapier connected (Stage 2) and tested with a private
+  upload, which worked. The daily run now uploads the Short via Zapier after
+  checking the public feed. Windsor is used for Instagram only.

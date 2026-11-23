@@ -4,7 +4,7 @@ One Reel a day at **18:00 German time** (`CLAUDE.md` sections 1 and 6a).
 Claude keeps this file current.
 
 **YouTube (Workflow v1.1):** after the Instagram publish, the same video goes to
-YouTube Shorts with the title and description from `youtube.txt`. The owner's
+YouTube Shorts (via Zapier) with the title and description from `youtube.txt`. The owner's
 OK covers both platforms; Reels approved before v1.1 need a separate OK for
 their YouTube text.
 
