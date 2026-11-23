@@ -1,0 +1,13 @@
+TITLE:
+How does an app recognise a song in seconds?
+
+DESCRIPTION:
+How does an app recognise a song in seconds?
+It turns the sound into a spectrogram, keeps only the loudest peaks and throws the rest away. Pairs of those peaks become fingerprints, and the right song is the one whose fingerprints line up at the same spacing. Even if only 1 to 2% survive a noisy room, the match still holds. That's the method Shazam published in 2003.
+Send this to a music lover.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Avery Wang, "An Industrial-Strength Audio Search Algorithm" (ISMIR 2003).
+#techexplained #shazam #howitworks
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@5702677f6720ab760baf219505215147dc2289f1/reels/006-song-recognition/video.mp4

@@ -344,3 +344,9 @@ analytics/                publishing log, metrics, reports (no usernames)
     Zapier connector, manual upload by the owner until it works.
   - Every Reel gets a `youtube.txt`; the owner's approval covers both platforms.
   - Brand assets (avatar, YouTube banner) are in `brand/`.
+- **2026-11-23 · v1.1:**
+  - `youtube.txt` created for Reels 002–008; their YouTube texts still need
+    the owner's OK (002–005 were approved before v1.1).
+  - Scheduled publish and batch runs now include the YouTube step (Zapier if
+    connected, otherwise a manual-upload request to the owner).
+  - Morning radar 2026-11-23: no topical go.

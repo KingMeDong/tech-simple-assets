@@ -1,0 +1,13 @@
+TITLE:
+Why does your phone die faster in the cold?
+
+DESCRIPTION:
+Why does your phone die faster in the cold?
+Inside a lithium-ion battery, ions move through a liquid to power your phone. In the cold, that liquid gets thicker, the ions slow down and the battery's resistance rises, so it can't deliver a sudden burst of power and the phone shuts down to protect itself. The charge is still there: warm it up and it comes back.
+Save this for winter.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Apple Support (iPhone battery and temperature), Communications Chemistry (2025) review on low-temperature lithium-ion batteries.
+#techexplained #battery #howitworks
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@5702677f6720ab760baf219505215147dc2289f1/reels/007-cold-battery/video.mp4

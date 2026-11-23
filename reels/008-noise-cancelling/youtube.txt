@@ -1,0 +1,13 @@
+TITLE:
+How do noise cancelling headphones work?
+
+DESCRIPTION:
+How do noise cancelling headphones work?
+A microphone on the outside listens to the noise around you, and a chip creates the opposite sound wave, called anti-noise. When both reach your ear, they cancel each other out. It works best on steady, low sounds like an engine hum. Sudden sounds and voices are harder to copy, so some still get through.
+Send this to the friend who wears them on every flight.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Apple Support (Active Noise Cancellation), Bose (how noise cancelling works), HyperPhysics (interference of sound).
+#techexplained #noisecancelling #howitworks
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@5702677f6720ab760baf219505215147dc2289f1/reels/008-noise-cancelling/video.mp4

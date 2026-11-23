@@ -1,0 +1,13 @@
+TITLE:
+How does a QR code still work when it's torn?
+
+DESCRIPTION:
+How does a QR code still work when it's torn?
+Every QR code stores extra repair data next to your message, using Reed-Solomon error correction. On the strongest setting, up to about 30% of the data can be rebuilt, which is why codes survive scratches, dirt and even a logo in the middle. The three big corner squares are different: they are how your camera finds the code.
+Which everyday tech should we explain next?
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Denso Wave (inventor of the QR Code), ISO/IEC 18004 error-correction tables, our own scan tests.
+#techexplained #qrcode #howitworks
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@833a45a693d99679c7ec50d7ad94e5084201c06a/reels/002-qr-code/video.mp4
