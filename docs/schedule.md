@@ -19,15 +19,15 @@ the row to `awaiting approval`.
 | Slot (German time) | Reel | Type | Status | Approved (date, commit) | YouTube text (`youtube.txt`) |
 |---|---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) | owner uploads by hand (`reels/001-airdrop/youtube.txt`) |
-| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | published 18:29 ([Reel](https://www.instagram.com/reel/DgF6up5AqZy/)) | 2026-11-22, 833a45a (published version; the later fix was not approved in time) | awaiting approval |
-| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a | awaiting approval |
-| Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a | awaiting approval |
-| Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | awaiting approval | — | awaiting approval |
-| Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a | awaiting approval |
-| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | awaiting approval | — | awaiting approval |
-| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | awaiting approval | — | awaiting approval |
-| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | awaiting approval (files at 0f7e5eb) | — | awaiting approval |
-| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | awaiting approval (files at 0f7e5eb) | — | awaiting approval |
+| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | published 18:29 ([Reel](https://www.instagram.com/reel/DgF6up5AqZy/)) | 2026-11-22, 833a45a (published version; the later fix was not approved in time) | approved 2026-11-23; upload by hand pending |
+| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |
+| Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |
+| Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
+| Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |
+| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
+| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
+| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | approved | 2026-11-23, 0f7e5eb | approved 2026-11-23 (text at a29fa30) |
+| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | approved | 2026-11-23, 0f7e5eb | approved 2026-11-23 (text at a29fa30) |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
