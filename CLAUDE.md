@@ -125,8 +125,11 @@ playbook explains them.
     `main` exceed 45 MB, and **a Reel's `video.mp4` is deleted from `main` once
     Instagram has published it** (git history keeps it).
 - **Git:** The owner has given standing permission to push to `main`.
-- **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**, about
-  150–170 words per minute.
+- **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`** at
+  its natural pace: `LENGTH_SCALE` **1.05**, about 180 words per minute
+  including pauses (owner decision 2026-11-23 after a listening test; the
+  slower 1.38 setting sounded drawn-out). Don't slow the voice down to hit a
+  words-per-minute target; shorten the script instead.
   - Install with `pip install piper-tts`.
   - Voice files come from Hugging Face `rhasspy/piper-voices`
     (`en/en_US/ryan/high/`). They are not stored in the repo because of their size.
@@ -378,3 +381,9 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-23 · v1.1:** First YouTube Short live (001, uploaded by hand by the
   owner). Windsor `upload_video` was rejected three times; support ticket
   54691726. Phone verification done (intermediate features active).
+- **2026-11-23 · v1.1:**
+  - Reel 002 on YouTube (uploaded by hand).
+  - Voice speed back to Piper's natural pace (`LENGTH_SCALE` 1.05, about
+    180 wpm) by owner decision after a listening test. This replaces the
+    150–170 wpm rule from Reel 002 on and applies from the batch on Thu
+    2026-11-26; the approved Reels 003–010 stay as they are.
