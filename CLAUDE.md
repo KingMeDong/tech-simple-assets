@@ -80,6 +80,11 @@ playbook explains them.
     - No `trial_params` until eligible (see section 7).
   - Comments: create, reply, hide, unhide, delete.
   - Read: `get_data` — always look up field IDs with `get_fields` first.
+  - **Publish timeouts:** `create_video_post` can time out after 60 s while
+    Instagram is still processing the video (seen on 2026-11-23). Never retry
+    blindly: wait about 2 minutes, then check `media_count` and the media list
+    with `get_data` (look at `data_fetched_at`), and retry only if the Reel is
+    really missing.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label
     (the owner sets it in the app after publishing, section 8).
@@ -356,3 +361,6 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-23 · v1.1:** Batch run: Reels 009 (package tracking, Cyber
   Monday) and 010 (login codes). Only two fit under the 45 MB limit; the queue
   rule now notes the cap of about 8 unpublished videos on `main`.
+- **2026-11-23 · v1.1:** Reel 002 published (18:29, 29 min late: worker
+  restart plus a Windsor timeout while Instagram processed the video). Rule
+  added in section 4: no blind retries after a publish timeout.

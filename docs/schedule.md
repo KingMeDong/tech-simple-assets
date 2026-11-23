@@ -19,7 +19,7 @@ the row to `awaiting approval`.
 | Slot (German time) | Reel | Type | Status | Approved (date, commit) | YouTube text (`youtube.txt`) |
 |---|---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) | owner uploads by hand (`reels/001-airdrop/youtube.txt`) |
-| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | approved | 2026-11-22, 833a45a (a fixed version is on main, awaiting re-approval; until then the 833a45a version is published) | awaiting approval |
+| Mon 2026-11-23 18:00 | 002-qr-code | evergreen | published 18:29 ([Reel](https://www.instagram.com/reel/DgF6up5AqZy/)) | 2026-11-22, 833a45a (published version; the later fix was not approved in time) | awaiting approval |
 | Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a | awaiting approval |
 | Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a | awaiting approval |
 | Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | awaiting approval | — | awaiting approval |
