@@ -1,0 +1,13 @@
+TITLE:
+How does AirDrop work with no internet?
+
+DESCRIPTION:
+How does AirDrop send photos without the internet?
+AirDrop uses Bluetooth Low Energy to find nearby Apple devices, then the two phones open a direct, encrypted Wi-Fi link between them. No router, no network, no mobile data. That's why AirDrop needs Wi-Fi and Bluetooth turned on.
+Send this to the friend who still emails photos to themselves.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Apple Platform Security (AirDrop), Apple Support "Use AirDrop on your iPhone".
+#techexplained #airdrop #iphonetips
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@505f36523281bfba45a2b050b66df3e28dfefec8/reels/001-airdrop/video.mp4

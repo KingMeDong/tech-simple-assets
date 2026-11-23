@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v0.1 (draft) · **Last updated:** 2026-11-22
+**Version:** v0.2 (draft) · **Last updated:** 2026-11-23
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -16,7 +16,11 @@ playbook explains them.
 
 ## 1. Project
 
-- **Channel:** Instagram @tech.simple.explained (Professional account, ID `17841480548146890`).
+- **Channels:**
+  - Instagram @tech.simple.explained (Professional account, ID `17841480548146890`).
+  - YouTube Shorts "tech.simple.explained" (brand channel on the owner's Google
+    account; being set up 2026-11-23). Same video as the Reel, published
+    after Instagram.
 - **Concept:** Everyday technology explained simply and excitingly
   (e.g. "How does AirDrop work?").
 - **Goal:** As much reach and engagement as possible (views, likes, shares,
@@ -76,6 +80,16 @@ playbook explains them.
   - Read: `get_data` — always look up field IDs with `get_fields` first.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label.
+- **YouTube access:** Windsor cannot upload to YouTube. Uploads go through
+  the **Zapier** connector (action "YouTube: Upload Video", file URL =
+  jsDelivr URL).
+  - Until Zapier is connected, the owner uploads by hand in the YouTube app
+    with the title and description Claude provides.
+  - Zapier free plan: about 100 tasks/month. Verify the actual usage per upload.
+  - YouTube's "altered or synthetic content" question: answer **No** (no real
+    person, no altered real footage, no realistic invented scene). The AI
+    voice is disclosed in the description instead.
+  - Audience setting: "not made for kids".
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
   - **Publish URLs use jsDelivr, pinned to the commit SHA:**
     `https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@<commit-sha>/reels/<NNN>-<slug>/video.mp4`
@@ -86,8 +100,8 @@ playbook explains them.
   - Before publishing, verify each URL returns HTTP 200, the right content
     type and the same byte size as the local file.
   - jsDelivr does not serve GitHub repos larger than 50 MB. Keep video files
-    under 20 MB and **delete a Reel's `video.mp4` from `main` once Instagram
-    has published it** (git history keeps it).
+    under 20 MB and **delete a Reel's `video.mp4` from `main` once it is live
+    on both Instagram and YouTube** (git history keeps it).
 - **Git:** The owner has given standing permission to push to `main`.
 - **Voice:** Piper TTS (free, runs locally), voice **`en_US-ryan-high`**, about
   150–170 words per minute.
@@ -126,9 +140,16 @@ playbook explains them.
 5. **Approval (owner):** Claude sends the video, cover, caption and planned
    slot. The owner watches the video on a phone, once with sound and once
    muted, and answers "OK" or asks for changes.
-6. **Publish (Claude):** Publish via Windsor at the planned slot, using the
-   jsDelivr URLs. Record the `media_id` in the publishing log. Then delete
-   `video.mp4` from `main`.
+6. **Publish (Claude):**
+   - Publish via Windsor at the planned slot, using the jsDelivr URLs, and
+     record the `media_id` in the publishing log.
+   - Then upload the same file to YouTube as a Short via Zapier, or hand it to
+     the owner for manual upload until Zapier works. Record the YouTube link.
+   - Finally delete `video.mp4` from `main`.
+   - The owner's approval covers both platforms. The preview therefore
+     includes the YouTube title and description: the title is the topic
+     question (max 100 characters); the description is the Instagram caption
+     with the same AI disclosure.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
 
 ## 7. Analytics
@@ -219,3 +240,8 @@ analytics/                publishing log, metrics, reports (no usernames)
     (owner feedback on the pilot).
   - Pilot Reel 001 published (owner asked to post immediately as a test,
     off-slot). Publishing log started in `analytics/publishing-log.md`.
+- **2026-11-23 · v0.2:**
+  - YouTube Shorts added as second platform (brand channel, Zapier upload,
+    manual fallback).
+  - Brand assets in `brand/`.
+  - Videos are now deleted from `main` only after both platforms are live.
