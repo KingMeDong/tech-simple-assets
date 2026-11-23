@@ -1,0 +1,5 @@
+How does your phone know where your package is?
+Usually there's no tracker in the box. Every parcel gets its own barcode, and each time it's scanned at a sorting center, a tiny note is saved: what happened, when and where. Your tracking app just lists those notes, which is why "in transit" can look stuck between scans. The location fix comes from the driver's handheld scanner at the very end.
+Ever had one stuck in transit?
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #packagetracking #howitworks

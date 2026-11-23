@@ -1,0 +1,22 @@
+{
+  "id": "009-package-tracking",
+  "title": "How package tracking works",
+  "series": "How it actually works #9",
+  "segments": [
+    {"id": "hook",  "text": "How does your phone know where your package is?", "pause": 0.3},
+    {"id": "twist", "text": "Usually, there's no tracker in the box. Just a barcode that gets scanned, again and again.", "pause": 0.45},
+    {"id": "s1",    "text": "Step one: every parcel gets its own barcode. International mail even ends in two letters for the country that sent it.", "pause": 0.4},
+    {"id": "s2",    "text": "Step two: at each sorting center, a scanner reads it and stores a tiny note: what happened, when, and where. Your app just lists those notes.", "pause": 0.4},
+    {"id": "s3a",   "text": "Step three, the surprise: between two scans, there's nothing new to show. That's why in transit can look stuck.", "pause": 0.35},
+    {"id": "s3b",   "text": "And the live location on the map? It comes from the driver's handheld scanner, at the very last step.", "pause": 0.4},
+    {"id": "pay",   "text": "So your package isn't tracked live. It leaves a trail of scans.", "pause": 0.3},
+    {"id": "cta",   "text": "Ever had one stuck in transit?", "pause": 0.05}
+  ],
+  "end_card_seconds": 0.1,
+  "sources": [
+    "https://upu.int/UPU/media/upu/files/postalSolutions/programmesAndServices/standards/S10-12.pdf (UPU S10: 13-character item identifier for individually tracked items incl. parcels: 2-letter service indicator, 8-digit serial number, check digit, 2-letter country code)",
+    "https://postalpro.usps.com/mnt/glusterfs/2024-01/Pub%20199_v29_01192024_0.pdf (USPS Publication 199 v29: 'The IMpb or unique tracking barcode is required for all parcels'; the scan event extract file 'contains tracking information about the movement of packages'; each event has Event Date, Event Time and Event ZIP; e.g. 'Your item arrived at our USPS facility in CITY, STATE ZIPCODE on DATE at TIME', 'Your item is out for delivery on DATE at TIME')",
+    "https://faq.usps.com/articles/FAQ/Where-is-my-package (USPS: 'USPS uses many package tracking status scans'; In Transit / Arrived / Departed USPS Facility scans 'may appear multiple times from the same facility and/or on different days'; 'Additional tracking information will display when the package arrives at unit and is out for delivery'; Out for Delivery: prepared at the local Post Office, delivered by a carrier today)",
+    "https://www.oversight.gov/sites/default/files/oig-reports/DR-AR-18-001.pdf (USPS OIG 2018: 'Carriers use a handheld Mobile Delivery Device (MDD) to scan and transmit package tracking data. MDDs use a cellular network and Global Positioning System (GPS) technology to obtain real-time delivery tracking and location information')"
+  ]
+}

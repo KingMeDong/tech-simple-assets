@@ -1,0 +1,5 @@
+Why do login codes change every 30 seconds?
+Authenticator-app codes aren't sent to you. Your phone and the server share a secret key and count time in 30-second steps. Each side mixes the secret with the current step and cuts the result to six digits, so both get the same code without talking. Thirty seconds is the standard's recommended balance: long enough to type, short enough that a stolen code soon goes stale.
+Send this to a slow typer.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #2fa #howitworks

@@ -1,0 +1,62 @@
+{
+  "id": "010-login-codes",
+  "title": "Why login codes change every 30 seconds",
+  "series": "How it actually works #10",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Why do login codes change every thirty seconds?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "Your authenticator app never talks to the server. They share a secret, and a clock.",
+      "pause": 0.35
+    },
+    {
+      "id": "scope",
+      "text": "These are app codes, not codes sent by text message.",
+      "pause": 0.4
+    },
+    {
+      "id": "s1",
+      "text": "Step one: when you set it up, both sides store the same secret key, often hidden in the QR code you scan.",
+      "pause": 0.4
+    },
+    {
+      "id": "s2",
+      "text": "Step two: both count time in thirty-second steps, since January nineteen seventy.",
+      "pause": 0.4
+    },
+    {
+      "id": "s3a",
+      "text": "Step three: each side puts the secret and the current step through the same math, then cuts it down to six digits.",
+      "pause": 0.3
+    },
+    {
+      "id": "s3b",
+      "text": "Same secret, same step, same code. No message needed.",
+      "pause": 0.4
+    },
+    {
+      "id": "pay",
+      "text": "Thirty seconds is the standard's recommended balance: long enough to type, short enough that a stolen code soon goes stale.",
+      "pause": 0.3
+    },
+    {
+      "id": "cta",
+      "text": "Send this to a slow typer.",
+      "pause": 0.1
+    }
+  ],
+  "end_card_seconds": 0.05,
+  "sources": [
+    "IETF RFC 6238 (TOTP), https://www.rfc-editor.org/rfc/rfc6238 section 3: 'The prover (e.g., token, soft token) and verifier (authentication or validation server) MUST know or be able to derive the current Unix time (i.e., the number of seconds elapsed since midnight UTC of January 1, 1970)'; R2: 'The prover and verifier MUST either share the same secret or the knowledge of a secret transformation to generate a shared secret'",
+    "RFC 6238 section 4: 'X represents the time step in seconds (default value X = 30 seconds)'; T0 default 0 = the Unix epoch; 'TOTP = HOTP(K, T)'; 'T = (Current Unix time - T0) / X, where the default floor function is used'",
+    "RFC 6238 section 5.2: 'We RECOMMEND a default time-step size of 30 seconds. This default value of 30 seconds is selected as a balance between security and usability.' and 'a larger time-step size exposes a larger window to attack. When an OTP is generated and exposed to a third party before it is consumed, the third party can consume the OTP within the time-step window.'",
+    "IETF RFC 4226 (HOTP), https://www.rfc-editor.org/rfc/rfc4226 section 5.3: HS = HMAC-SHA-1(K,C) (the 'mix'), dynamic truncation to a 31-bit number, D = Snum mod 10^Digit; section 5.3: 'Implementations MUST extract a 6-digit code at a minimum'; K = 'shared secret between client and server'",
+    "Google Authenticator Key URI format, https://github.com/google/google-authenticator/wiki/Key-Uri-Format: 'Secret keys may be encoded in QR codes as a URI' (otpauth://totp/...?secret=...) (basis for 'often hidden in the QR code you scan')",
+    "Scope: these are authenticator-app (TOTP) codes; SMS codes are sent by the server and are not covered by RFC 6238"
+  ],
+  "length_scale": 1.22
+}
