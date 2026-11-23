@@ -38,7 +38,9 @@ takes the next 18:00 slot.
 
 | Date spotted | Event | Hook question | Primary sources | Decision |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-11-23 | Black Friday (Fri 2026-11-27) and Cyber Monday, record online shopping expected | How does your phone know where your package is? | Carrier docs to check (e.g. USPS Intelligent Mail package barcode, scan events) | **later**: seasonal, not news; candidate for the Mon 2026-11-30 slot via the batch run |
+| 2026-11-23 | Microsoft 365 outage (Outlook, Teams), 12–13 Nov | Why does one company's outage break so many apps? | Microsoft status history | **no**: older than 48 h, and the cause is only partly confirmed (no speculation) |
+| 2026-11-23 | GTA 6 launch hype trending on TikTok/Instagram (18 Nov) | How does a game load a whole city with no loading screens? | No primary technical source from the studio | **no**: gaming rather than everyday tech, and no primary source |
 
 ## Ideas
 
