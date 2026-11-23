@@ -26,8 +26,11 @@ the row to `awaiting approval`.
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a | awaiting approval |
 | Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | awaiting approval | — | awaiting approval |
 | Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | awaiting approval | — | awaiting approval |
+| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | in production | — | awaiting approval |
+| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | in production | — | awaiting approval |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
 006–008 started on 2026-11-22 (owner asked to fill Thu/Sat/Sun now).
-Next regular batch: Mon 2026-11-23 (slots from Mon 2026-11-30).
+Batch Mon 2026-11-23: 009–010 (only 2: main had room for two more videos;
+pushed after 002's video leaves main at 18:00). Next batch: Thu 2026-11-26.

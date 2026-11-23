@@ -27,8 +27,8 @@ Produced and scheduled (see `docs/schedule.md` for slots and approvals):
 002 QR code · 003 Tap-to-pay · 004 Wi-Fi in the kitchen · 005 Face ID ·
 006 Song recognition · 007 Cold battery · 008 Noise cancelling.
 
-Next to produce (batch Mon 2026-11-23): **#14 Two-factor codes** ·
-**#16 Bluetooth trackers** · **#09 Indoor location** · **#15 Dark mode**.
+In production: 009 Package tracking (topical lane) · 010 Two-factor codes (#14).
+Next (batch Thu 2026-11-26): **#16 Bluetooth trackers** · **#09 Indoor location** · **#15 Dark mode**.
 
 ## Topical lane
 
@@ -38,7 +38,7 @@ takes the next 18:00 slot.
 
 | Date spotted | Event | Hook question | Primary sources | Decision |
 |---|---|---|---|---|
-| 2026-11-23 | Black Friday (Fri 2026-11-27) and Cyber Monday, record online shopping expected | How does your phone know where your package is? | Carrier docs to check (e.g. USPS Intelligent Mail package barcode, scan events) | **later**: seasonal, not news; candidate for the Mon 2026-11-30 slot via the batch run |
+| 2026-11-23 | Black Friday (Fri 2026-11-27) and Cyber Monday, record online shopping expected | How does your phone know where your package is? | Carrier docs to check (e.g. USPS Intelligent Mail package barcode, scan events) | **in production** as Reel 009 for Mon 2026-11-30 |
 | 2026-11-23 | Microsoft 365 outage (Outlook, Teams), 12–13 Nov | Why does one company's outage break so many apps? | Microsoft status history | **no**: older than 48 h, and the cause is only partly confirmed (no speculation) |
 | 2026-11-23 | GTA 6 launch hype trending on TikTok/Instagram (18 Nov) | How does a game load a whole city with no loading screens? | No primary technical source from the studio | **no**: gaming rather than everyday tech, and no primary source |
 
@@ -58,7 +58,7 @@ takes the next 18:00 slot.
 | 11 | idea | How does a touchscreen know it's your finger? | That's why it fails with gloves on. | A sensor grid; the finger bends the electric field. | Projected capacitive sensing; gloves insulate; conductive gloves work. | search |
 | 12 | idea | How does wireless charging work without touching? | There's still a "wire": a magnetic field. | Two coils, field lines jump between them. | Inductive coupling between coils (Qi standard, Wireless Power Consortium). | search |
 | 13 | idea | What happens when you hit "send" on a message? | Not even the server can read it. | A message is scrambled, travels as gibberish, unlocks only at the end. | Only true for end-to-end encrypted apps; say so. Public-key basics. | share |
-| 14 | idea ★ | Why do login codes change every 30 seconds? | Your phone and the server never talk: they share a secret and the clock. | A secret key + a ticking clock go into a blender; the same 6 digits pop out on phone and server at once. | TOTP, RFC 6238 (30 s time step) and RFC 4226 (HOTP). | share |
+| 14 | in production (Reel 010) | Why do login codes change every 30 seconds? | Your phone and the server never talk: they share a secret and the clock. | A secret key + a ticking clock go into a blender; the same 6 digits pop out on phone and server at once. | TOTP, RFC 6238 (30 s time step) and RFC 4226 (HOTP). | share |
 | 15 | idea ★ | Does dark mode really save battery? | On some screens it saves nothing at all. | Two phones side by side: OLED pixels switching off vs. an LCD backlight that stays on behind black pixels. | OLED pixels emit their own light; LCD uses a backlight. Google's Android Dev Summit 2018 measurements on dark mode power. | search |
 | 16 | idea ★ | How does a Bluetooth tracker find your lost keys… with no GPS? | Strangers' phones help, without knowing it. | Keys in a café, a passer-by's phone silently relays an encrypted location, a map pin appears on your phone. | Apple Find My network docs / Platform Security guide (end-to-end encrypted, anonymous relays); Google Find My Device network docs. | share |
 | 17 | idea | How does your phone know which way is up? | There's a tiny weight on springs inside it. | Zoom into a MEMS accelerometer: a comb-shaped mass sways and capacitor plates measure it; the screen rotates. | MEMS accelerometer principle from a chip maker's datasheet/app note (e.g. Bosch, STMicroelectronics, Analog Devices). | share |

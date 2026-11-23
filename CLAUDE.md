@@ -166,6 +166,9 @@ playbook explains them.
   in one go. The owner approves Reel by Reel.
 - **Queue:** At least **3 approved Reels** ready at all times; target 5–7
   (about a week). If it drops below 3, Claude produces an extra batch at once.
+  `main` holds at most about 8 unpublished videos (45 MB limit), so a batch
+  only adds as many videos as fit; the rest wait until published videos
+  leave `main`.
 - **Schedule and approvals:** `docs/schedule.md` lists every slot, its Reel
   and its approval. Claude marks a Reel approved only after the owner's
   explicit "OK" in chat, and only Reels marked approved are ever published.
@@ -350,3 +353,6 @@ analytics/                publishing log, metrics, reports (no usernames)
   - Scheduled publish and batch runs now include the YouTube step (Zapier if
     connected, otherwise a manual-upload request to the owner).
   - Morning radar 2026-11-23: no topical go.
+- **2026-11-23 · v1.1:** Batch run: Reels 009 (package tracking, Cyber
+  Monday) and 010 (login codes). Only two fit under the 45 MB limit; the queue
+  rule now notes the cap of about 8 unpublished videos on `main`.
