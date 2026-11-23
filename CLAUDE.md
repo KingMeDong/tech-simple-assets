@@ -96,12 +96,21 @@ playbook explains them.
   every upload). All three API uploads on 2026-11-23 were rejected with
   "YouTube rate-limited the upload" (channel at 0 videos, phone-verified);
   Windsor support asked (ref 54691726). The owner's manual upload worked, so
-  the channel itself is fine. Until Windsor uploads work, the owner uploads by
-  hand.
+  the channel itself is fine.
+  - **Plan (2026-11-23):**
+    - **Step 1 (active):** The daily run tries Windsor `upload_video`
+      **exactly once** per Reel, after checking the channel's public feed for
+      an existing upload. On any error the owner gets the links for a manual
+      upload.
+    - **Step 2:** If Windsor keeps failing, connect Zapier at
+      claude.ai/customize/connectors and move the automation to a new
+      session (connectors load at session start).
+    - **Step 3:** Last resort: our own Google Cloud project for the YouTube
+      Data API.
   - **Video URL:** the same jsDelivr URL pinned to the approved commit. It
     keeps working after `video.mp4` is deleted from `main`.
-  - **Until Zapier is connected:** the owner uploads by hand in the YouTube
-    app, using `reels/<reel>/youtube.txt` (title, description, file link).
+  - **Manual fallback:** the owner uploads by hand in the YouTube app, using
+    `reels/<reel>/youtube.txt` (title, description, file link).
   - **Title:** the topic question, max 100 characters.
   - **Description:** the Instagram caption plus a short sources line. It keeps
     the same AI disclosure.
@@ -387,3 +396,7 @@ analytics/                publishing log, metrics, reports (no usernames)
     180 wpm) by owner decision after a listening test. This replaces the
     150–170 wpm rule from Reel 002 on and applies from the batch on Thu
     2026-11-26; the approved Reels 003–010 stay as they are.
+- **2026-11-23 · v1.1:** YouTube automation plan: one Windsor upload attempt
+  per Reel in the daily run, with a feed check against duplicates and a manual
+  fallback; Zapier or our own Google Cloud project only if Windsor keeps
+  failing.
