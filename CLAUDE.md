@@ -93,8 +93,11 @@ playbook explains them.
   privacy, optional `publish_at`). Checked on 2026-11-23; the earlier note that
   Windsor cannot upload was wrong. The channel "tech.simple.explained" is
   connected (Windsor youtube account `118382`; check `channel_title` before
-  every upload). The first two uploads were rate-limited by YouTube; until one
-  succeeds, Zapier or a manual upload by the owner is the fallback.
+  every upload). All three API uploads on 2026-11-23 were rejected with
+  "YouTube rate-limited the upload" (channel at 0 videos, phone-verified);
+  Windsor support asked (ref 54691726). The owner's manual upload worked, so
+  the channel itself is fine. Until Windsor uploads work, the owner uploads by
+  hand.
   - **Video URL:** the same jsDelivr URL pinned to the approved commit. It
     keeps working after `video.mp4` is deleted from `main`.
   - **Until Zapier is connected:** the owner uploads by hand in the YouTube
@@ -372,3 +375,6 @@ analytics/                publishing log, metrics, reports (no usernames)
 - **2026-11-23 · v1.1:** YouTube channel connected to Windsor (`upload_video`
   available, so Zapier isn't needed). The first upload attempts were
   rate-limited by YouTube; a retry is scheduled.
+- **2026-11-23 · v1.1:** First YouTube Short live (001, uploaded by hand by the
+  owner). Windsor `upload_video` was rejected three times; support ticket
+  54691726. Phone verification done (intermediate features active).
