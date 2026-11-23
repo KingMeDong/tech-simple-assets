@@ -10,4 +10,4 @@ Sources: IETF RFC 6238 (TOTP) and RFC 4226 (HOTP), Google Authenticator Key URI 
 #techexplained #2fa #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@COMMIT_SHA/reels/010-login-codes/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@0f7e5eb9ddab99c58efa48c45c5e4a0906b24741/reels/010-login-codes/video.mp4

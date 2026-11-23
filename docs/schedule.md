@@ -26,8 +26,8 @@ the row to `awaiting approval`.
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a | awaiting approval |
 | Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | awaiting approval | — | awaiting approval |
 | Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | awaiting approval | — | awaiting approval |
-| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | produced (video pushed after 18:00 today) | — | awaiting approval |
-| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | produced (video pushed after 18:00 today) | — | awaiting approval |
+| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | awaiting approval (files at 0f7e5eb) | — | awaiting approval |
+| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | awaiting approval (files at 0f7e5eb) | — | awaiting approval |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
