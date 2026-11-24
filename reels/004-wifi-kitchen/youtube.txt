@@ -10,4 +10,4 @@ Sources: Apple Support (Wi-Fi interference), FCC 47 CFR Parts 15 and 18, FDA (mi
 #techexplained #wifi #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@833a45a693d99679c7ec50d7ad94e5084201c06a/reels/004-wifi-kitchen/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@faabf1c35165a382a956541f94b96fadcba14dc8/reels/004-wifi-kitchen/video.mp4

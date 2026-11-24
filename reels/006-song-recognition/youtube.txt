@@ -10,4 +10,4 @@ Sources: Avery Wang, "An Industrial-Strength Audio Search Algorithm" (ISMIR 2003
 #techexplained #shazam #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@5702677f6720ab760baf219505215147dc2289f1/reels/006-song-recognition/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@faabf1c35165a382a956541f94b96fadcba14dc8/reels/006-song-recognition/video.mp4
