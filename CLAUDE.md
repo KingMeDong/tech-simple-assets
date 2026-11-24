@@ -415,3 +415,9 @@ analytics/                publishing log, metrics, reports (no usernames)
   automated checks; on any failure the Reel is held) and the owner's veto
   ("Stopp <NNN>") on the preview of every Reel. Schedule status `ready`
   replaces `awaiting approval`.
+- **2026-11-24 · v1.2:** All queued Reels 003–010 re-voiced at the natural
+  pace (`LENGTH_SCALE` 1.05; now 38–43 s at 176–194 wpm, before 46–51 s at
+  153–163 wpm). Reason: the owner asked for the speech-rate check, and Reel
+  002 (slow voice) had a 78% skip rate vs. 46% for Reel 001 (natural voice) in
+  the first hours. Only n = 2, so this is a signal, not proof. Texts, facts,
+  captions and covers are unchanged; all checks pass.
