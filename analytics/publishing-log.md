@@ -17,4 +17,4 @@ Metrics live in `analytics/metrics.md` (72 h and 7 d pulls).
 |---|---|---|---|---|---|
 | 001-airdrop | 2026-11-23 22:30 | XS9UBGAi0AE | https://www.youtube.com/shorts/XS9UBGAi0AE | owner, by hand | Title "How does AirDrop work with no Internet" (owner adjusted it after upload); Windsor `upload_video` was rate-limited 3 times (support ref 54691726) |
 | 002-qr-code | 2026-11-23 22:39 | TqQAoaGj_9o | https://www.youtube.com/shorts/TqQAoaGj_9o | owner, by hand | Title from youtube.txt |
-| 003-tap-to-pay | — | — | — | not uploaded | Zapier `upload_video` returned 429 Too Many Requests (2026-11-24 18:56); no retry; owner asked to upload by hand |
+| 003-tap-to-pay | 2026-11-24 ~19:10 | ozwbZ8jS9Tw | https://www.youtube.com/shorts/ozwbZ8jS9Tw | owner, by hand | Zapier `upload_video` returned 429 Too Many Requests (18:56); no retry |
