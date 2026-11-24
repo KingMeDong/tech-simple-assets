@@ -68,3 +68,12 @@ python3 tools/reel/tts.py reels/003-tap-to-pay
 python3 tools/reel/render.py reels/003-tap-to-pay
 python3 tools/reel/check.py reels/003-tap-to-pay
 ```
+
+## Re-voice 2026-11-24
+
+Re-voiced at Piper's natural pace (`LENGTH_SCALE` 1.05, owner's choice after
+the listening test). Old: 50.8 s, 156 wpm incl. pauses (166 speech-only).
+New: 42.5 s, 189 wpm incl. pauses (203 speech-only). Script text, facts and
+scene unchanged; all words heard (Whisper only spells "tap to pay" as
+"Tap2Pay" and "centimetres" as "centimeters"); no T.word warnings;
+check.py 16/16 PASS.
