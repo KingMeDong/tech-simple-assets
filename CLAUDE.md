@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.3 · **Last updated:** 2026-11-24
+**Version:** v1.4 · **Last updated:** 2026-11-24
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -21,8 +21,8 @@ playbook explains them.
   - Instagram @tech.simple.explained (Professional account, ID `17841480548146890`).
   - YouTube Shorts "tech.simple.explained" (Brand Account channel, ID
     `UCSsTlgx8fGEp-GPJWu8X6CA`, set up 2026-11-23, phone-verified). It gets
-    the same video as Instagram, uploaded via Zapier right after the
-    Instagram publish.
+    the same video as Instagram in the same 18:00 slot. Since 2026-11-24 the
+    owner schedules each Short in YouTube Studio (section 4).
 - **Concept:** Everyday technology explained simply and excitingly
   (e.g. "How does AirDrop work?").
 - **Goal:** As much reach and engagement as possible (views, likes, shares,
@@ -94,37 +94,45 @@ playbook explains them.
   - Not available on our setup: deleting posts, Instagram's music library,
     collaborators on video posts, alt text on Reels, setting the AI label
     (the owner sets it in the app after publishing, section 8).
-- **YouTube access:** Uploads go through the **Zapier** connector
-  (claude.ai connector, loaded in the main session since 2026-11-23).
-  - Action: `execute_zapier_write_action`, selected_api `YouTubeV4CLIAPI`,
-    action `upload_video` (tool `youtube_upload_video`). The default
-    connection is the channel "tech.simple.explained" (channel ID
-    `UCSsTlgx8fGEp-GPJWu8X6CA`); check `channelTitle` in the result.
-  - Params: `title`, `description`, `video` (the pinned jsDelivr URL),
-    `privacy_status` "public", `made_for_kids` "false", `notify_subscribers`
-    "true", `category_id` "28" (Science & Technology).
-  - Tested 2026-11-23 with a private test upload: it worked on the first try.
-  - **Before uploading, check the free public feed**
-    (`https://www.youtube.com/feeds/videos.xml?channel_id=UCSsTlgx8fGEp-GPJWu8X6CA`)
-    so nothing is uploaded twice. Don't spend Zapier tasks on extra reads.
-  - Windsor's `youtube` connector also lists `upload_video`, but YouTube
-    rejected all three attempts with "rate-limited" (support ref 54691726).
-    It is not used.
+- **YouTube access (owner decision 2026-11-24): the owner schedules every
+  Short by hand** in YouTube Studio or the YouTube app (Visibility → Schedule,
+  the Reel's slot at 18:00 German time). Both automatic routes failed: Windsor
+  `upload_video` was rate-limited three times (support ref 54691726), and
+  Zapier `upload_video` returned "429 Too Many Requests" on 2026-11-24.
+  - **YouTube-Plan page:** Claude keeps a private claude.ai artifact with
+    every `ready` Reel: slot, title and description to copy, and the pinned
+    video link (https://claude.ai/artifact/UGMKD4QAbHBTchJMcwLJYn). It is built
+    by `python3 tools/youtube_plan.py <out.html>` from `docs/schedule.md` and
+    each Reel's `youtube.txt` at its ready commit, and republished to the same
+    URL after every batch and every schedule change. Claude tells the owner
+    which Shorts are new.
+  - **The daily run uploads nothing to YouTube.** After the Instagram publish
+    it checks the free public feed
+    (`https://www.youtube.com/feeds/videos.xml?channel_id=UCSsTlgx8fGEp-GPJWu8X6CA`;
+    the channel's Shorts page shows new Shorts sooner) and records the Short's
+    link. If the Short isn't live by about 18:15, it reminds the owner.
+  - **When the slot order changes** (topical fast lane, `hold`, veto), Claude
+    tells the owner exactly which scheduled Shorts to move or delete in
+    YouTube Studio, and republishes the page. A vetoed Reel must also be
+    removed from YouTube's schedule.
   - **Video URL:** the same jsDelivr URL pinned to the commit in the Reel's
-    `ready` row. It keeps working after `video.mp4` is deleted from `main`.
+    `ready` row, never the VIDEO FILE line of `youtube.txt` (for several Reels
+    that line was fixed only after the ready commit). It keeps working after
+    `video.mp4` is deleted from `main`.
   - **Reading YouTube data:** Windsor's `youtube` connector (account `118382`)
-    reports `views` per video with a 24–48 h delay. It costs no Zapier tasks.
-  - **Manual fallback:** the owner uploads by hand in the YouTube app, using
-    `reels/<reel>/youtube.txt` (title, description, file link).
+    reports `views` per video with a 24–48 h delay.
   - **Title:** the topic question, max 100 characters.
   - **Description:** the Instagram caption plus a short sources line. It keeps
     the same AI disclosure.
   - **"Altered or synthetic content":** answer **No**. There is no real
     person, no altered real footage and no realistic invented scene; the AI
     voice is disclosed in the description instead.
-  - **Audience:** "not made for kids".
-  - **Zapier free plan:** 100 tasks/month, and each successful call costs
-    2 tasks. One upload a day is about 60 tasks/month.
+  - **Audience:** "not made for kids". **Category:** Science & Technology.
+  - **Zapier (kept, not used):** `execute_zapier_write_action`, selected_api
+    `YouTubeV4CLIAPI`, action `upload_video`, default connection = our
+    channel. It has a `publish_at` field (needs `privacy_status` "private";
+    Zapier marks it partner-only, untested). Free plan: 100 tasks/month,
+    2 per call. Only use it again if the owner asks.
 - **Media hosting:** This repo, branch `main`. Instagram only accepts public URLs.
   - **Publish URLs use jsDelivr, pinned to the commit SHA:**
     `https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@<commit-sha>/reels/<NNN>-<slug>/video.mp4`
@@ -177,15 +185,16 @@ playbook explains them.
 4. **Upload (Claude):** Push the video and cover to `main` and verify the
    public URLs. Files sitting in the repo are not published yet.
 5. **Preview (owner, optional):** Claude sends the video, cover, caption,
-   YouTube title and planned slot for information. No answer is needed. The
-   owner can ask for changes or veto with "Stopp <NNN>" until the Reel goes
-   live.
+   YouTube title and planned slot for information, and republishes the
+   YouTube-Plan page (section 4). No answer is needed. The owner can ask for
+   changes or veto with "Stopp <NNN>" until the Reel goes live. The owner
+   schedules the new Shorts in YouTube Studio.
 6. **Publish (Claude):**
    - Publish via Windsor at the planned slot, using the jsDelivr URLs, and
      record the `media_id` in the publishing log. Then delete `video.mp4`
      from `main`.
-   - Then put the same video on YouTube as a Short (section 4: Zapier; the
-     owner uploads by hand only if that fails) and record the YouTube link.
+   - YouTube: the owner has scheduled the same video as a Short for the same
+     slot (section 4). Claude checks that it went live and records the link.
    - Publishing covers both platforms, so every preview includes
      `youtube.txt`.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
@@ -223,8 +232,9 @@ playbook explains them.
 - **Scheduled tasks** (set up 2026-11-22 with the owner's go; they fire into
   the main Claude session, times in German time):
   - **Daily Reel publish, 17:31:** waits until 18:00 and publishes today's
-    Reel if `docs/schedule.md` marks it `ready` or `approved` and the owner
-    hasn't vetoed it. Then it updates the log,
+    Reel on Instagram if `docs/schedule.md` marks it `ready` or `approved` and
+    the owner hasn't vetoed it, then checks that the owner's scheduled Short
+    went live on YouTube. Then it updates the log,
     pulls due 72 h / 7 d metrics and checks the queue.
   - **Morning tech news radar, 07:47:** topical fast lane.
   - **Reel batch production, Mon + Thu 09:13.**
@@ -268,6 +278,9 @@ playbook explains them.
   `brand/youtube-banner.png`). Claude can't upload images through the API.
 - **Once (done 2026-11-22):** Name field "Tech Simple Explained · How tech
   works" and bio with the AI-narration line, both verified via the API.
+- **After every batch (Mon/Thu, about 10 min):** Schedule the new Shorts in
+  YouTube Studio from the YouTube-Plan page (section 4), each at its slot,
+  18:00 German time. Tick them off on the page.
 - **After every publish (about 30 s):** Add Meta's in-app "AI info" label to
   the new Reel (playbook A2). Verified on Reel #1: the label can be added to
   Reels published through the API. Claude's daily status message reminds the
@@ -323,6 +336,8 @@ All six are done, so this file is **Workflow v1**.
   video; the Reel then appears about 2 minutes later (seen 2026-11-23).
 - Windsor's YouTube `upload_video` was rejected three times as rate-limited
   (support ticket 54691726); a manual upload worked, so the channel is fine.
+- Zapier `upload_video` returned "429 Too Many Requests" for Reel 003
+  (2026-11-24). Since then the owner schedules YouTube Shorts by hand.
 
 ## 10. Repo layout
 
@@ -370,11 +385,11 @@ analytics/                publishing log, metrics.csv, followers.csv,
 - **Posting frequency:** daily for now (Buffer: 6–9 posts/week gave more reach
   per post as long as quality held). Review it in the 2026-12-07 report; fall
   back to 5/week if quality or per-Reel numbers drop.
-- **Costs to watch:** Claude usage (each Reel takes substantial compute),
-  Zapier (free plan covers one YouTube channel at one upload a day; a second
-  channel needs a paid plan), Windsor (trial).
-- **Zapier is used only for YouTube uploads.** Recurring work stays in
-  Claude's scheduled tasks.
+- **Costs to watch:** Claude usage (each Reel takes substantial compute) and
+  Windsor (trial). Zapier costs nothing while it isn't used.
+- **YouTube uploads are manual for now:** the owner schedules each batch in
+  YouTube Studio (about 10 min twice a week per channel). Recurring work stays
+  in Claude's scheduled tasks.
 
 ---
 
@@ -497,3 +512,10 @@ analytics/                publishing log, metrics.csv, followers.csv,
   - Wording from the approval era removed.
   - YouTube branding upload added as an owner task.
   - Lessons from Reels 001–010 are now in the playbook.
+- **2026-11-24 · v1.4:** Reel 003 published on Instagram (18:55, worker
+  restart). Zapier's YouTube upload returned 429, so the owner uploaded 003
+  by hand. **Owner decision: the owner schedules every YouTube Short in
+  YouTube Studio** (Visibility → Schedule, 18:00). Claude keeps the
+  "YouTube-Plan" page (`tools/youtube_plan.py`) with title, description and
+  video link per `ready` Reel, republishes it after each batch, and the daily
+  run only checks that the Short went live. Zapier is kept but not used.

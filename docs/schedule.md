@@ -7,7 +7,9 @@ Claude keeps this file current.
 approval is needed. A Reel is published at its slot, on Instagram and then
 YouTube, if its row says `ready` (or `approved`) with the commit of the exact
 files that passed every check. The files and captions published are always the
-ones at that commit. The owner gets every preview and can veto with
+ones at that commit. YouTube: since 2026-11-24 the owner schedules each
+Short in YouTube Studio for the same slot, from the YouTube-Plan page
+(`CLAUDE.md` section 4); Claude records the link once it is live. The owner gets every preview and can veto with
 "Stopp <NNN>"; Claude then sets the row to `hold`.
 
 **Status values:** `planned` → `in production` → `ready` (or `approved`,
