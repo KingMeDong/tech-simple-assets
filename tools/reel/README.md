@@ -21,14 +21,20 @@ python3 tools/reel/check.py  reels/001-airdrop             # spec check (must be
    - Transcribes the result with faster-whisper (`small.en`) to get word timings.
    - The transcript doubles as a pronunciation check: script words the
      recognizer did not hear are listed under `qa.unheard_script_words`.
-     Fix those by respelling or rephrasing.
+     Numbers written as digits and US spellings are false alarms. Piper isn't
+     deterministic, so re-run `tts.py` first; reword only if a word keeps
+     failing (playbook L2, L3).
 2. **`render.py`**
    - Builds `build/page.html` from `base.css`, `lib.js` and the Reel's `scene.js`.
    - Calls `render(t)` in headless Chromium for every frame (30 fps) and pipes
-     screenshots into ffmpeg. The cover comes from `COVER()`.
+     screenshots into ffmpeg (H.264 CRF 25, 3 Mbps cap). The cover comes from
+     `COVER()`.
+   - Prints a WARNING for every `T.word()` lookup that found no word; a Reel
+     must render without warnings.
 3. **`check.py`** verifies:
    - Codec, resolution, fps, audio, duration
-   - Size under 50 MB, faststart
+   - File under 20 MB, faststart, and all files on `main` under 45 MB
+     (jsDelivr refuses repos over 50 MB)
    - Cover format and size
    - Caption length, hashtags, AI disclosure
 
@@ -37,11 +43,20 @@ python3 tools/reel/check.py  reels/001-airdrop             # spec check (must be
 `scene.js` defines `SCENE(t, T)`, which returns `{top, svg, html, glow, noCaptions}`.
 
 - **Timeline:** Use `T.start(id)`, `T.end(id)` and `T.word(segId, "word")` to
-  sync animation to the voice.
+  sync animation to the voice. `T.word` matches the first word in the segment
+  that starts with the given text (apostrophes ignored), so "two" also matches
+  "Step two". Prefer word-keyed timings over fixed offsets: they survive
+  re-voicing.
 - **Visuals:** `lib.js` provides the primitives (phones, icons, rings, bars,
   locks, checks), easing helpers, and burned-in captions.
 - **Layout:** Keep everything inside the safe zone: x 65–1015, y 270–1250.
   Captions sit at y ≈ 1105–1245.
 
-Build outputs (`build/`) are git-ignored. Only `video.mp4` and `cover.jpg` are
-committed, because Instagram fetches them from their public jsDelivr URLs.
+Build outputs (`build/`) are git-ignored. `video.mp4` and `cover.jpg` are
+committed because Instagram and YouTube fetch them from their public jsDelivr
+URLs (pinned to a commit). A Reel's `video.mp4` is deleted from `main` once
+it's published.
+
+Per Reel, the folder also holds `outline.md` (beats, facts with sources,
+lessons), `caption.txt`, `youtube.txt` and, where needed, a topic-specific QA
+script (e.g. `reels/002-qr-code/qa_scan.py`).

@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.2 · **Last updated:** 2026-11-23
+**Version:** v1.3 · **Last updated:** 2026-11-24
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -19,9 +19,10 @@ playbook explains them.
 
 - **Channels:**
   - Instagram @tech.simple.explained (Professional account, ID `17841480548146890`).
-  - YouTube Shorts "tech.simple.explained" (brand channel on the owner's Google
-    account, set up 2026-11-23). It gets the same video as Instagram, uploaded
-    after the Instagram publish.
+  - YouTube Shorts "tech.simple.explained" (Brand Account channel, ID
+    `UCSsTlgx8fGEp-GPJWu8X6CA`, set up 2026-11-23, phone-verified). It gets
+    the same video as Instagram, uploaded via Zapier right after the
+    Instagram publish.
 - **Concept:** Everyday technology explained simply and excitingly
   (e.g. "How does AirDrop work?").
 - **Goal:** As much reach and engagement as possible (views, likes, shares,
@@ -74,7 +75,7 @@ playbook explains them.
    - Caption line: "Voice: AI text-to-speech. Script written and fact-checked by a human."
    - Bio line: "AI narration, human-written scripts."
 7. **Every Reel passes the pre-publish checklist** in `docs/playbook.md` before
-   it is shown to the owner for approval.
+   it is marked `ready` and published.
 
 ## 4. Tools and infrastructure
 
@@ -109,8 +110,10 @@ playbook explains them.
   - Windsor's `youtube` connector also lists `upload_video`, but YouTube
     rejected all three attempts with "rate-limited" (support ref 54691726).
     It is not used.
-  - **Video URL:** the same jsDelivr URL pinned to the approved commit. It
-    keeps working after `video.mp4` is deleted from `main`.
+  - **Video URL:** the same jsDelivr URL pinned to the commit in the Reel's
+    `ready` row. It keeps working after `video.mp4` is deleted from `main`.
+  - **Reading YouTube data:** Windsor's `youtube` connector (account `118382`)
+    reports `views` per video with a 24–48 h delay. It costs no Zapier tasks.
   - **Manual fallback:** the owner uploads by hand in the YouTube app, using
     `reels/<reel>/youtube.txt` (title, description, file link).
   - **Title:** the topic question, max 100 characters.
@@ -181,8 +184,8 @@ playbook explains them.
    - Publish via Windsor at the planned slot, using the jsDelivr URLs, and
      record the `media_id` in the publishing log. Then delete `video.mp4`
      from `main`.
-   - Then put the same video on YouTube as a Short (section 4: Zapier, or the
-     owner by hand until Zapier works) and record the YouTube link.
+   - Then put the same video on YouTube as a Short (section 4: Zapier; the
+     owner uploads by hand only if that fails) and record the YouTube link.
    - Publishing covers both platforms, so every preview includes
      `youtube.txt`.
 7. **Track (Claude):** Pull metrics after 72 h and after 7 days.
@@ -246,6 +249,11 @@ playbook explains them.
   the daily 17:31 run. Raw data goes to `analytics/metrics.csv` and
   `followers.csv`; `analytics/report.py` computes the KPIs against our median.
   The 72 h result is part of the daily status message.
+- **First signal (2026-11-24, only n = 2):** Reel 001 (natural voice) had a
+  46% skip rate and 9.9 s average watch time; Reel 002 (slowed voice) had 78%
+  and 4.8 s. That's why every queued Reel was re-voiced at the natural pace.
+  Treat it as a hint until the 2026-12-07 report.
+- **YouTube metrics:** not yet part of the daily pull (planned, section 9).
 - **Trial Reels:** Not used until we have followers. At 200 followers, try one
   trial publish; if it is refused, retry at 1,000.
 
@@ -253,7 +261,11 @@ playbook explains them.
 
 - **Comments:** The owner answers comments personally (decision 2026-11-22).
   Claude doesn't reply to comments.
-- **Windsor plan:** The owner handles the trial and any paid plan.
+- **Windsor plan:** The owner handles the trial and any paid plan. If the
+  trial ends without a plan, Instagram publishing and metrics stop.
+- **YouTube, once (open):** Upload the profile picture and banner in YouTube
+  Studio → Customization → Branding (`brand/avatar.png`,
+  `brand/youtube-banner.png`). Claude can't upload images through the API.
 - **Once (done 2026-11-22):** Name field "Tech Simple Explained · How tech
   works" and bio with the AI-narration line, both verified via the API.
 - **After every publish (about 30 s):** Add Meta's in-app "AI info" label to
@@ -285,6 +297,15 @@ playbook explains them.
 
 All six are done, so this file is **Workflow v1**.
 
+**Phase 2 (planned, owner direction 2026-11-24; details in section 11):**
+1. [ ] YouTube Shorts metrics in the daily pull (Windsor `youtube`, `views`).
+2. [ ] Niche research for a second YouTube channel, after the 2026-12-07
+   report.
+3. [ ] Second channel as a 30-day test (YouTube only; own topic, look and
+   voice).
+4. [ ] Long-form YouTube videos (5–10 min) built from our best Shorts topics,
+   for watch hours.
+
 **Already verified:**
 - The Claude GitHub app has push access.
 - raw.githubusercontent.com URLs serve files publicly (HTTP 200, `image/jpeg`).
@@ -296,6 +317,12 @@ All six are done, so this file is **Workflow v1**.
   The owner is checking what happens when the trial ends.
 - Metrics read works (2026-11-22): reach, views, shares, saves, likes,
   comments, average and total watch time, and skip rate per Reel.
+- Zapier `upload_video` to YouTube works (private test 2026-11-23). The channel
+  description was set through Zapier's raw API request (`channels.update`).
+- Windsor `create_video_post` can time out while Instagram still processes the
+  video; the Reel then appears about 2 minutes later (seen 2026-11-23).
+- Windsor's YouTube `upload_video` was rejected three times as rate-limited
+  (support ticket 54691726); a manual upload worked, so the channel is fine.
 
 ## 10. Repo layout
 
@@ -304,12 +331,50 @@ CLAUDE.md                 this workflow
 README.md                 short public description
 docs/playbook.md          rules, evidence, pre-publish checklist, experiments
 docs/topic-backlog.md     Reel ideas, status, queue priority, topical lane
-docs/schedule.md          daily slots, assigned Reels, owner approvals
+docs/schedule.md          daily slots, Reel status (ready/published/hold), commits
 docs/research_notes/      source notes behind the playbook
 tools/                    shared code: fonts, styles, render scripts
-reels/<NNN>-<slug>/       per Reel: script.md, video.mp4, cover.jpg, caption.txt
-analytics/                publishing log, metrics, reports (no usernames)
+brand/                    avatar, YouTube banner, channel texts
+reels/<NNN>-<slug>/       per Reel: script.json (text + sources), scene.js,
+                          outline.md (beats, facts, lessons), caption.txt,
+                          youtube.txt, cover.jpg, video.mp4 (removed from
+                          main once published)
+analytics/                publishing log, metrics.csv, followers.csv,
+                          report.py, reports/ (no usernames)
 ```
+
+
+## 11. Strategy and direction (owner, 2026-11-24)
+
+- **Goal beyond this channel:** Several YouTube Shorts channels that earn
+  money with little ongoing effort. A second channel would be **YouTube
+  only**. Instagram stays for this channel, not for new ones. If needed, the
+  owner uploads a new channel's videos by hand and Claude says when to
+  publish.
+- **Why YouTube:** It has a clear revenue share (YouTube Partner Program).
+  Ad revenue needs 1,000 subscribers plus 4,000 watch hours in 12 months or
+  10 M Shorts views in 90 days; fan funding starts at 500 subscribers.
+  Reported for 2027-02-01: about double (8,000 h or 20 M Shorts views). Check
+  the official YouTube Help page before planning around these numbers.
+  Instagram has no open revenue share for Reels in Germany that we could
+  confirm; it is worth more for reach and later brand deals.
+- **The main risk is YouTube's "inauthentic content" rule** (clarified July
+  2026). Mass-produced, template-like AI content isn't monetized, and YouTube
+  reviews the whole channel. AI voice is allowed when the content adds real
+  value. So every channel needs its own topic, look and voice, every Reel its
+  own visual idea and checked facts, and we vary the visuals on purpose.
+- **Order:** First the 2026-12-07 report for this channel. Then niche
+  research (demand, competition, ad value, sources, risks), then one second
+  channel as a 30-day test, and only then more. Money and health niches are
+  out (error risk and YouTube's strictness).
+- **Posting frequency:** daily for now (Buffer: 6–9 posts/week gave more reach
+  per post as long as quality held). Review it in the 2026-12-07 report; fall
+  back to 5/week if quality or per-Reel numbers drop.
+- **Costs to watch:** Claude usage (each Reel takes substantial compute),
+  Zapier (free plan covers one YouTube channel at one upload a day; a second
+  channel needs a paid plan), Windsor (trial).
+- **Zapier is used only for YouTube uploads.** Recurring work stays in
+  Claude's scheduled tasks.
 
 ---
 
@@ -421,3 +486,14 @@ analytics/                publishing log, metrics, reports (no usernames)
   002 (slow voice) had a 78% skip rate vs. 46% for Reel 001 (natural voice) in
   the first hours. Only n = 2, so this is a signal, not proof. Texts, facts,
   captions and covers are unchanged; all checks pass.
+- **2026-11-24 · v1.3:** Documentation review:
+  - New section 11: strategy (several YouTube Shorts channels; YouTube-first
+    monetization; the inauthentic-content risk; daily cadence under review).
+  - Phase 2 roadmap added.
+  - First analytics signal recorded.
+  - "Already verified" updated (Zapier, timeouts, Windsor YouTube).
+  - Repo layout corrected (`script.json`, `outline.md`, `youtube.txt`,
+    `brand/`).
+  - Wording from the approval era removed.
+  - YouTube branding upload added as an owner task.
+  - Lessons from Reels 001–010 are now in the playbook.

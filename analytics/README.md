@@ -12,6 +12,8 @@ never usernames or comment texts in this public repo.
 | **7 d pull** | in the publish run **7 days** after (age ≈ 167.5 h) | `metrics.csv`, label `7d` |
 | **Report** | every second Monday in the batch run, first on **Mon 2026-12-07** | `reports/<date>.md`; its decisions feed the next topics and experiments |
 | Retention curves, Account Status | weekly, by the owner in the app (section 8) | screenshots to Claude; not available via the API |
+| Snapshots | whenever a quick look is useful | `metrics.csv`, label `snapshot` (not used for the median) |
+| YouTube Shorts | planned (CLAUDE.md §9, Phase 2) | Windsor connector `youtube`, account `118382`, field `views` per `video`; data arrives 24–48 h late |
 
 ## How
 
