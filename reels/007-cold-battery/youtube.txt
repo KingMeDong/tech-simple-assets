@@ -10,4 +10,4 @@ Sources: Apple Support (iPhone battery and temperature), Communications Chemistr
 #techexplained #battery #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@5702677f6720ab760baf219505215147dc2289f1/reels/007-cold-battery/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@b897f00513c83e34698374cf23c6730ffd58b0e5/reels/007-cold-battery/video.mp4

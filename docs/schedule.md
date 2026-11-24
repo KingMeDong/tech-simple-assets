@@ -21,10 +21,10 @@ before v1.2) → `published`; or `hold` (failed a check or vetoed).
 | Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | ready | 2026-11-24, faabf1c (re-voiced at natural pace; content approved 2026-11-22) | approved 2026-11-23 (text at 6b6eef9) |
 | Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | ready | 2026-11-24, faabf1c (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at 6b6eef9) |
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | ready | 2026-11-24, faabf1c (re-voiced at natural pace; content approved 2026-11-22) | approved 2026-11-23 (text at 6b6eef9) |
-| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
-| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
-| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | approved | 2026-11-23, 0f7e5eb | approved 2026-11-23 (text at a29fa30) |
-| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | approved | 2026-11-23, 0f7e5eb | approved 2026-11-23 (text at a29fa30) |
+| Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at 6b6eef9) |
+| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at 6b6eef9) |
+| Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at a29fa30) |
+| Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at a29fa30) |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:

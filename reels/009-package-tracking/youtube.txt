@@ -10,4 +10,4 @@ Sources: UPU S10 standard (13-character item identifier), USPS Publication 199 (
 #techexplained #packagetracking #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@0f7e5eb9ddab99c58efa48c45c5e4a0906b24741/reels/009-package-tracking/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@b897f00513c83e34698374cf23c6730ffd58b0e5/reels/009-package-tracking/video.mp4
