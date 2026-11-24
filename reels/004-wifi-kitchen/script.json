@@ -2,8 +2,6 @@
   "id": "004-wifi-kitchen",
   "title": "Why your Wi-Fi is slower in the kitchen",
   "series": "How it actually works #4",
-  "length_scale": 1.28,
-  "length_scale_note": "tts.py reads length_scale from this file. At the 1.38 default this number-heavy script measured 143.5 wpm (below the 150-170 rule).",
   "segments": [
     {
       "id": "hook",

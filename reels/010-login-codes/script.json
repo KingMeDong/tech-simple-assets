@@ -57,6 +57,5 @@
     "IETF RFC 4226 (HOTP), https://www.rfc-editor.org/rfc/rfc4226 section 5.3: HS = HMAC-SHA-1(K,C) (the 'mix'), dynamic truncation to a 31-bit number, D = Snum mod 10^Digit; section 5.3: 'Implementations MUST extract a 6-digit code at a minimum'; K = 'shared secret between client and server'",
     "Google Authenticator Key URI format, https://github.com/google/google-authenticator/wiki/Key-Uri-Format: 'Secret keys may be encoded in QR codes as a URI' (otpauth://totp/...?secret=...) (basis for 'often hidden in the QR code you scan')",
     "Scope: these are authenticator-app (TOTP) codes; SMS codes are sent by the server and are not covered by RFC 6238"
-  ],
-  "length_scale": 1.22
+  ]
 }
