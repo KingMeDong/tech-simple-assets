@@ -240,13 +240,13 @@ function SCENE(t, T) {
     const hits = [1, 0, 4, 1];
     let svg = "";
     codes.forEach((c, i) => {
-      const t0 = a + 0.2 + i * 0.32, fly = ease.inOut(prog(t, t0 + 0.4, t0 + 1.1));
+      const t0 = a + 0.15 + i * 0.22, fly = ease.inOut(prog(t, t0 + 0.3, t0 + 0.85));  // tightened for the natural-pace voice
       const dest = i === 2 || i === 4 ? 0 : (i % 2 ? 2 : 2);
       const x = lerp(250, 640, fly), y = lerp(600 + i * 92, 620 + 2 * 112, fly);
       svg += g(tag(c, C.accent, 200), { x, y, o: appear(t, t0, 0.25, ease.out) * (1 - fly * 0.9), s: lerp(1, 0.6, fly) });
     });
     songs.forEach((s, i) => {
-      const y = 620 + i * 112, h = Math.round(hits[i] * clamp(prog(t, a + 0.9, a + 2.6)));
+      const y = 620 + i * 112, h = Math.round(hits[i] * clamp(prog(t, a + 0.6, a + 1.9)));
       const win = i === 2 && h >= 3;
       svg += `<rect x="600" y="${y - 44}" width="380" height="88" rx="18" fill="${C.bg2}" stroke="${win ? C.green : C.line}" stroke-width="${win ? 6 : 3}"/>` +
         g(note(win ? C.green : C.muted), { x: 650, y, s: 0.6 }) +

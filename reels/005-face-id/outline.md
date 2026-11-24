@@ -64,3 +64,7 @@ python3 tools/reel/tts.py reels/005-face-id
 python3 tools/reel/render.py reels/005-face-id
 python3 tools/reel/check.py reels/005-face-id
 ```
+
+## Re-voice
+
+- **Re-voiced at natural pace (2026-11-24):** `LENGTH_SCALE` 1.05 instead of 1.38 (owner's choice after a listening test). Length 50.0 s → 42.0 s; 154 → 185 wpm incl. pauses (200 speech-only). Clean on the first take. No wording or scene changes.

@@ -66,3 +66,7 @@ LENGTH_SCALE=1.28 python3 tools/reel/tts.py reels/004-wifi-kitchen
 python3 tools/reel/render.py reels/004-wifi-kitchen
 python3 tools/reel/check.py reels/004-wifi-kitchen
 ```
+
+## Re-voice
+
+- **Re-voiced at natural pace (2026-11-24):** `length_scale` override (1.28) removed, so the pipeline default 1.05 applies (owner's choice after a listening test). Length 46.9 s → 41.4 s; 158 → 179 wpm incl. pauses (190 speech-only). The first take misheard "radio waves too, at" as "to have"; the second take was clean. No wording or scene changes.

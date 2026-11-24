@@ -62,3 +62,7 @@ the fingerprint codes and song cards are made up, and the scatter plot uses
   "Send this to a music lover" (1.9 s) replaced a longer line.
 - Two-line step headlines plus a pill end at about y 532; the spectrogram
   starts at y 552, so keep step headlines to two lines.
+
+## Re-voice
+
+- **Re-voiced at natural pace (2026-11-24):** `LENGTH_SCALE` 1.05 instead of 1.38 (owner's choice after a listening test). Length 45.7 s → 38.5 s; 163 → 194 wpm incl. pauses (209 speech-only). Clean on the first take. Scene change: the library lookup (step 3b) used fixed timings that left the "Song 3" match on screen for only ~0.8 s, so codes now fly in faster and hits count up by step start + 1.9 s, which keeps the match visible ~1.6 s. No wording changes.
