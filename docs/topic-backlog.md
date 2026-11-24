@@ -41,6 +41,8 @@ takes the next 18:00 slot.
 | 2026-11-23 | Black Friday (Fri 2026-11-27) and Cyber Monday, record online shopping expected | How does your phone know where your package is? | Carrier docs to check (e.g. USPS Intelligent Mail package barcode, scan events) | **in production** as Reel 009 for Mon 2026-11-30 |
 | 2026-11-23 | Microsoft 365 outage (Outlook, Teams), 12–13 Nov | Why does one company's outage break so many apps? | Microsoft status history | **no**: older than 48 h, and the cause is only partly confirmed (no speculation) |
 | 2026-11-23 | GTA 6 launch hype trending on TikTok/Instagram (18 Nov) | How does a game load a whole city with no loading screens? | No primary technical source from the studio | **no**: gaming rather than everyday tech, and no primary source |
+| 2026-11-24 | US Thanksgiving travel week (Thu 2026-11-26) | How does your phone know the new time zone when you land? | Apple/Android docs on automatic time zone (network time / location) to check | **later**: seasonal, not news; candidate for a batch run |
+| 2026-11-24 | No big consumer-tech launch or outage in the last 48 h (latest: Apple iCloud/App Store/Apple Pay, 17 Nov) | — | Apple System Status | **no**: older than 48 h, and the cause is only "an internal update" |
 
 ## Ideas
 
