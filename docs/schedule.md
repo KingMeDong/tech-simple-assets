@@ -17,7 +17,7 @@ before v1.2) → `published`; or `hold` (failed a check or vetoed).
 |---|---|---|---|---|---|
 | Sun 2026-11-22 19:09 | 001-airdrop | evergreen | published | 2026-11-22 (pilot) | published 2026-11-23 22:30 by hand ([Short](https://www.youtube.com/shorts/XS9UBGAi0AE)) |
 | Mon 2026-11-23 18:00 | 002-qr-code | evergreen | published 18:29 ([Reel](https://www.instagram.com/reel/DgF6up5AqZy/)) | 2026-11-22, 833a45a (published version; the later fix was not approved in time) | published 2026-11-23 22:39 by hand ([Short](https://www.youtube.com/shorts/TqQAoaGj_9o)) |
-| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |
+| Tue 2026-11-24 18:00 | 003-tap-to-pay | evergreen (share) | ready | 2026-11-24, 81fed83 (re-voiced at natural pace; content approved 2026-11-22) | approved 2026-11-23 (text at 6b6eef9) |
 | Wed 2026-11-25 18:00 | 004-wifi-kitchen | evergreen (share) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |
 | Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | approved | 2026-11-23, 5702677 | approved 2026-11-23 (text at 6b6eef9) |
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | approved | 2026-11-22, 833a45a | approved 2026-11-23 (text at 6b6eef9) |

@@ -10,4 +10,4 @@ Sources: EMVCo (EMV contactless, tokenisation), NXP application notes AN13453 an
 #techexplained #contactless #nfc
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@833a45a693d99679c7ec50d7ad94e5084201c06a/reels/003-tap-to-pay/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@81fed837a8459d289bab707eb0eb624a70065ce2/reels/003-tap-to-pay/video.mp4
