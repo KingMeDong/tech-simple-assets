@@ -61,3 +61,7 @@ python3 tools/reel/tts.py reels/008-noise-cancelling
 python3 tools/reel/render.py reels/008-noise-cancelling
 python3 tools/reel/check.py reels/008-noise-cancelling
 ```
+
+## Re-voiced 2026-11-24
+
+Re-voiced at Piper's natural pace (`LENGTH_SCALE` 1.05, owner's choice after the listening test). Old: 48.4 s, 156 wpm incl. pauses (166 speech only). New: 42.1 s, 180 wpm incl. pauses (193 speech only). Script text unchanged; scene timings follow the word timeline, no scene edits needed. check.py all PASS.

@@ -54,3 +54,7 @@ fill level, not a percentage, so no specific numbers are implied. The
   headline line (~y 540): shorter wire, smaller device.
 - At the default `length_scale` (1.38) this script came out at 153 wpm with
   no unheard words; no per-Reel override needed.
+
+## Re-voiced 2026-11-24
+
+Re-voiced at Piper's natural pace (`LENGTH_SCALE` 1.05, owner's choice after the listening test). Old: 47.1 s, 153 wpm incl. pauses (162 speech only). New: 39.6 s, 182 wpm incl. pauses (196 speech only). Script text unchanged; scene timings follow the word timeline, no scene edits needed. check.py all PASS.

@@ -69,3 +69,7 @@ python3 tools/reel/render.py reels/010-login-codes   # no T.word warnings
 python3 tools/reel/check.py reels/010-login-codes
 ```
 - Review fixes: "Your phone and the server never talk" became "Your authenticator app never talks to the server" (the phone itself is online; it's the code generation that needs no exchange), and "a balance set by the standard" became "the standard's recommended balance" (RFC 6238 recommends 30 s, it doesn't require it).
+
+## Re-voiced 2026-11-24
+
+Re-voiced at Piper's natural pace (`LENGTH_SCALE` 1.05, owner's choice after the listening test). Old: 47.7 s, 156 wpm incl. pauses (166 speech only). New: 42.5 s, 176 wpm incl. pauses (188 speech only). Script text unchanged; scene timings follow the word timeline, no scene edits needed. check.py all PASS.

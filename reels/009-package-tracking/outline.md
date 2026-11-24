@@ -66,3 +66,7 @@ money advice. USPS is the documented example; the voice names no carrier.
   it clears once published videos leave main.
 - Piper is not deterministic: "saves" was sometimes heard as "says" and "the satellite location" as "this at a light location". Replaced with "stores" and "the live location on the map", which were heard correctly in 3 of 3 test runs.
 - "There's no tracker in the box" became "Usually, there's no tracker in the box": some premium shipments do carry sensor trackers.
+
+## Re-voiced 2026-11-24
+
+Re-voiced at Piper's natural pace (`LENGTH_SCALE` 1.05, owner's choice after the listening test). Old: 48.8 s, 158 wpm incl. pauses (167 speech only). New: 40.8 s, 189 wpm incl. pauses (202 speech only). Script text unchanged; scene timings follow the word timeline, no scene edits needed. check.py all PASS.
