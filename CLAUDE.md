@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.4 · **Last updated:** 2026-11-24
+**Version:** v1.5 · **Last updated:** 2026-11-25
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -231,7 +231,8 @@ playbook explains them.
   - All hard rules and the full pre-publish checklist still apply.
 - **Scheduled tasks** (set up 2026-11-22 with the owner's go; they fire into
   the main Claude session, times in German time):
-  - **Daily Reel publish, 17:31:** waits until 18:00 and publishes today's
+  - **Daily Reel publish, 17:56** (was 17:31 until 2026-11-25): checks and
+    waits only a few minutes, then publishes today's
     Reel on Instagram if `docs/schedule.md` marks it `ready` or `approved` and
     the owner hasn't vetoed it, then checks that the owner's scheduled Short
     went live on YouTube. Then it updates the log,
@@ -256,7 +257,7 @@ playbook explains them.
   first on 2026-12-07). Reliable patterns need roughly 20–30 Reels.
 - **How and when** (details in `analytics/README.md`): a follower snapshot
   every day, a 72 h pull 3 days and a 7 d pull 7 days after each Reel, all in
-  the daily 17:31 run. Raw data goes to `analytics/metrics.csv` and
+  the daily publish run. Raw data goes to `analytics/metrics.csv` and
   `followers.csv`; `analytics/report.py` computes the KPIs against our median.
   The 72 h result is part of the daily status message.
 - **First signal (2026-11-24, only n = 2):** Reel 001 (natural voice) had a
@@ -519,3 +520,8 @@ analytics/                publishing log, metrics.csv, followers.csv,
   "YouTube-Plan" page (`tools/youtube_plan.py`) with title, description and
   video link per `ready` Reel, republishes it after each batch, and the daily
   run only checks that the Short went live. Zapier is kept but not used.
+- **2026-11-25 · v1.5:** Reel 004 published on Instagram at 20:40 instead of
+  18:00: the worker restarted during the 29-minute wait (third delay in a
+  row: 002 +29 min, 003 +55 min). The owner's scheduled YouTube Short went
+  live on time at 18:00. The daily publish task now starts at **17:56**, so
+  the wait before 18:00 is about 3 minutes instead of 29.
