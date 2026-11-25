@@ -45,6 +45,9 @@ takes the next 18:00 slot.
 | 2026-11-23 | GTA 6 launch hype trending on TikTok/Instagram (18 Nov) | How does a game load a whole city with no loading screens? | No primary technical source from the studio | **no**: gaming rather than everyday tech, and no primary source |
 | 2026-11-24 | US Thanksgiving travel week (Thu 2026-11-26) | How does your phone know the new time zone when you land? | Apple/Android docs on automatic time zone (network time / location) to check | **later**: seasonal, not news; candidate for a batch run |
 | 2026-11-24 | No big consumer-tech launch or outage in the last 48 h (latest: Apple iCloud/App Store/Apple Pay, 17 Nov) | — | Apple System Status | **no**: older than 48 h, and the cause is only "an internal update" |
+| 2026-11-25 | TikTok outage in the US, about 90 min on 24 Nov (Downdetector reports) | Why does an app suddenly stop working for everyone? | No official cause or status page entry | **no**: cause unconfirmed (no speculation), short and already over |
+| 2026-11-25 | Spotify login problems worldwide, morning of 24 Nov | — | Spotify only said it was "aware of issues"; status page showed no incident | **no**: no confirmed cause, nothing to explain without guessing |
+| 2026-11-25 | WhatsApp "view-once" text messages reach iPhone beta testers | How can a message stop you taking a screenshot? | Beta reports only, no official WhatsApp announcement | **no**: beta/leak stage, not in most people's hands; revisit if WhatsApp announces it |
 
 ## Ideas
 
