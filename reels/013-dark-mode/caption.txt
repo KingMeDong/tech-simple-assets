@@ -1,0 +1,5 @@
+Does dark mode really save battery?
+On an LCD screen, a backlight lights the whole panel, so even black pixels cost power. On OLED, a black pixel is simply switched off. Purdue University researchers measured OLED phones: on average only about 3–9% less power at typical indoor brightness (30–50%), but 39–47% at full brightness.
+Is your phone in dark mode right now?
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #darkmode #howitworks
