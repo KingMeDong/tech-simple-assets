@@ -10,4 +10,4 @@ Sources: FAA (ADS-B overview and Flight Standards ADS-B page), 14 CFR 91.225 and
 #techexplained #aviation #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@COMMIT_SHA/reels/011-flight-tracking/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@e8cd92b2f8a40100e302fcb8c0f224fe11e1d0e3/reels/011-flight-tracking/video.mp4

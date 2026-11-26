@@ -10,4 +10,4 @@ Sources: Apple Platform Security guide (Find My), Apple AirTag page and newsroom
 #techexplained #bluetooth #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@COMMIT_SHA/reels/012-bluetooth-trackers/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@e8cd92b2f8a40100e302fcb8c0f224fe11e1d0e3/reels/012-bluetooth-trackers/video.mp4

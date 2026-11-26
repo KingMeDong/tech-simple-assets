@@ -10,4 +10,4 @@ Sources: Purdue University (Dash & Hu, ACM MobiSys 2021), LG (screen technology 
 #techexplained #darkmode #howitworks
 
 VIDEO FILE (jsDelivr, pinned):
-https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@COMMIT_SHA/reels/013-dark-mode/video.mp4
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@e8cd92b2f8a40100e302fcb8c0f224fe11e1d0e3/reels/013-dark-mode/video.mp4
