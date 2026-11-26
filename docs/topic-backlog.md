@@ -25,12 +25,13 @@ to Fri–Sun slots (T3).
 
 Published: 001 AirDrop, 002 QR code, 003 Tap-to-pay, 004 Wi-Fi in the
 kitchen. Ready and scheduled (see `docs/schedule.md`): 006 Song
-recognition · 005 Face ID · 007 Cold battery · 008 Noise cancelling · 009
-Package tracking · 010 Login codes (all re-voiced at the natural pace on
-2026-11-24).
+recognition · 005 Face ID · 007 Cold battery · 011 Flight tracking (Sun
+29.11, Thanksgiving return travel) · 009 Package tracking · 010 Login codes ·
+008 Noise cancelling (moved to Wed 2.12) · 012 Bluetooth trackers · 013 Dark
+mode (batch 2026-11-26).
 
-Next (batch Thu 2026-11-26, natural voice, livelier first second): **#16
-Bluetooth trackers** · **#09 Indoor location** · **#15 Dark mode**.
+Next (batch Mon 2026-11-30, natural voice, livelier first second): **#09
+Indoor location** · **#18 Portrait mode** · **#12 Wireless charging**.
 
 ## Topical lane
 
@@ -49,7 +50,7 @@ takes the next 18:00 slot.
 | 2026-11-25 | Spotify login problems worldwide, morning of 24 Nov | — | Spotify only said it was "aware of issues"; status page showed no incident | **no**: no confirmed cause, nothing to explain without guessing |
 | 2026-11-25 | WhatsApp "view-once" text messages reach iPhone beta testers | How can a message stop you taking a screenshot? | Beta reports only, no official WhatsApp announcement | **no**: beta/leak stage, not in most people's hands; revisit if WhatsApp announces it |
 | 2026-11-26 | Allstate website and app down for several days (US insurer) | — | TechCrunch report; no official cause | **no**: no confirmed cause, one company's IT failure, brand-bashing risk |
-| 2026-11-26 | US Thanksgiving travel peak (Tue 24 Nov to Mon 30 Nov); many people track flights in apps | How does your phone know where a plane is right now? | FAA ADS-B pages (aircraft broadcast their own GPS position; ADS-B Out required in most controlled US airspace since 2020) | **later**: seasonal habit, not a news event; candidate for today's batch with a return-travel slot (Sun 29 Nov) if it fits without moving many scheduled Shorts |
+| 2026-11-26 | US Thanksgiving travel peak (Tue 24 Nov to Mon 30 Nov); many people track flights in apps | How does your phone know where a plane is right now? | FAA ADS-B pages (aircraft broadcast their own GPS position; ADS-B Out required in most controlled US airspace since 2020) | **later**: seasonal habit, not a news event; **produced** as Reel 011 for Sun 2026-11-29 (008 moved to Wed 2.12) |
 | 2026-11-26 | Threads app for iPad; Meta AI features in Instagram DMs | — | Meta announcements | **no**: feature news, no clear "how does it work?" answer |
 
 ## Ideas
@@ -63,16 +64,16 @@ takes the next 18:00 slot.
 | 06 | produced (Reel 008) | How do noise-cancelling headphones work? | They add sound to make silence. | A wave and its mirror image cancel into a flat line. | Destructive interference; works best on low, steady frequencies. | search |
 | 07 | idea | How does Bluetooth not get confused? | It changes channel 1,600 times a second. | A signal hops between 79 channels. | Bluetooth Classic: 79 × 1 MHz channels, 1,600 hops/s. Bluetooth LE differs (40 channels), so say which one. | share |
 | 08 | produced (Reel 007) | Why does your phone die faster in the cold? | The battery isn't empty; the charge is stuck. | Lithium ions slow down as if moving through syrup. | Li-ion internal resistance rises and ion mobility drops in the cold; capacity returns once warm. | search |
-| 09 | idea | How does your phone know where you are… indoors? | GPS satellites don't know you exist; your phone only listens. | Satellites broadcast, the phone times the signals, Wi-Fi helps inside. | GPS is receive-only; a fix needs ≥4 satellites (position + time); indoor fixes use Wi-Fi/cell positioning. | share |
+| 09 | idea ★ | How does your phone know where you are… indoors? | GPS satellites don't know you exist; your phone only listens. | Satellites broadcast, the phone times the signals, Wi-Fi helps inside. | GPS is receive-only; a fix needs ≥4 satellites (position + time); indoor fixes use Wi-Fi/cell positioning. | share |
 | 10 | produced (Reel 006) | How does an app recognise a song in 3 seconds? | It ignores almost all of the music. | A spectrogram shrinks to its peaks: the "fingerprint". | Audio fingerprinting with spectrogram peak pairs (Wang 2003 paper). Name no app on screen. | share |
 | 11 | idea | How does a touchscreen know it's your finger? | That's why it fails with gloves on. | A sensor grid; the finger bends the electric field. | Projected capacitive sensing; gloves insulate; conductive gloves work. | search |
-| 12 | idea | How does wireless charging work without touching? | There's still a "wire": a magnetic field. | Two coils, field lines jump between them. | Inductive coupling between coils (Qi standard, Wireless Power Consortium). | search |
+| 12 | idea ★ | How does wireless charging work without touching? | There's still a "wire": a magnetic field. | Two coils, field lines jump between them. | Inductive coupling between coils (Qi standard, Wireless Power Consortium). | search |
 | 13 | idea | What happens when you hit "send" on a message? | Not even the server can read it. | A message is scrambled, travels as gibberish, unlocks only at the end. | Only true for end-to-end encrypted apps; say so. Public-key basics. | share |
 | 14 | in production (Reel 010) | Why do login codes change every 30 seconds? | Your phone and the server never talk: they share a secret and the clock. | A secret key + a ticking clock go into a blender; the same 6 digits pop out on phone and server at once. | TOTP, RFC 6238 (30 s time step) and RFC 4226 (HOTP). | share |
-| 15 | idea ★ | Does dark mode really save battery? | On some screens it saves nothing at all. | Two phones side by side: OLED pixels switching off vs. an LCD backlight that stays on behind black pixels. | OLED pixels emit their own light; LCD uses a backlight. Google's Android Dev Summit 2018 measurements on dark mode power. | search |
-| 16 | idea ★ | How does a Bluetooth tracker find your lost keys… with no GPS? | Strangers' phones help, without knowing it. | Keys in a café, a passer-by's phone silently relays an encrypted location, a map pin appears on your phone. | Apple Find My network docs / Platform Security guide (end-to-end encrypted, anonymous relays); Google Find My Device network docs. | share |
+| 15 | produced (Reel 013) | Does dark mode really save battery? | On some screens it saves nothing at all. | Two phones side by side: OLED pixels switching off vs. an LCD backlight that stays on behind black pixels. | OLED pixels emit their own light; LCD uses a backlight. Google's Android Dev Summit 2018 measurements on dark mode power. | search |
+| 16 | produced (Reel 012) | How does a Bluetooth tracker find your lost keys… with no GPS? | Strangers' phones help, without knowing it. | Keys in a café, a passer-by's phone silently relays an encrypted location, a map pin appears on your phone. | Apple Find My network docs / Platform Security guide (end-to-end encrypted, anonymous relays); Google Find My Device network docs. | share |
 | 17 | idea | How does your phone know which way is up? | There's a tiny weight on springs inside it. | Zoom into a MEMS accelerometer: a comb-shaped mass sways and capacitor plates measure it; the screen rotates. | MEMS accelerometer principle from a chip maker's datasheet/app note (e.g. Bosch, STMicroelectronics, Analog Devices). | share |
-| 18 | idea | How does portrait mode blur the background? | The blur isn't from the lens. It's computed. | A photo splits into a depth map (near = white, far = black); the far layers blur step by step. | Google AI blog on Pixel portrait mode (dual-pixel depth); Apple docs on depth capture. | share |
+| 18 | idea ★ | How does portrait mode blur the background? | The blur isn't from the lens. It's computed. | A photo splits into a depth map (near = white, far = black); the far layers blur step by step. | Google AI blog on Pixel portrait mode (dual-pixel depth); Apple docs on depth capture. | share |
 | 19 | idea | How does your phone know it's at your ear? | It shines invisible light at your face. | An infrared beam bounces off a cheek; the screen goes dark; pull away, it wakes. | Proximity sensor principle (IR emitter + detector) from Android sensor docs and a sensor maker's datasheet. | share |
 | 20 | idea | How does fast charging know how much power to send? | The charger and phone talk before the power flows. | A handshake animation over the USB-C cable: "5 V?" "I can take 9 V", then the power bar jumps. | USB Power Delivery spec / USB-IF (negotiated voltage and current). | search |
 | 21 | idea | Does a microwave cook food from the inside out? | No: it heats the outer few centimetres, then heat travels inward. | Cross-section of a potato: an orange layer near the surface, warmth slowly spreading to the cold centre. | FDA "Microwave oven radiation" page (penetration depth / heating). No health claims. | search |

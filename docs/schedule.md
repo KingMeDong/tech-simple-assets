@@ -24,9 +24,12 @@ before v1.2) → `published`; or `hold` (failed a check or vetoed).
 | Thu 2026-11-26 18:00 | 006-song-recognition | evergreen (share) | ready | 2026-11-24, faabf1c (re-voiced at natural pace; content approved 2026-11-23) | scheduled by owner in YouTube Studio for 18:00 (2026-11-24); text approved 2026-11-23 (6b6eef9) |
 | Fri 2026-11-27 18:00 | 005-face-id | evergreen (search, T3: Fri–Sun) | ready | 2026-11-24, faabf1c (re-voiced at natural pace; content approved 2026-11-22) | approved 2026-11-23 (text at 6b6eef9) |
 | Sat 2026-11-28 18:00 | 007-cold-battery | evergreen (search, seasonal) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at 6b6eef9) |
-| Sun 2026-11-29 18:00 | 008-noise-cancelling | evergreen (search) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at 6b6eef9) |
+| Sun 2026-11-29 18:00 | 011-flight-tracking | topical-seasonal (US Thanksgiving return travel) | in production | — | new 2026-11-26; owner schedules in YouTube Studio |
 | Mon 2026-11-30 18:00 | 009-package-tracking | topical-seasonal (Cyber Monday) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at a29fa30) |
 | Tue 2026-12-01 18:00 | 010-login-codes | evergreen (share) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | approved 2026-11-23 (text at a29fa30) |
+| Wed 2026-12-02 18:00 | 008-noise-cancelling | evergreen (search) | ready | 2026-11-24, b897f00 (re-voiced at natural pace; content approved 2026-11-23) | moved from Sun 2026-11-29 on 2026-11-26 (owner: move or schedule it for Wed 2.12); text approved 2026-11-23 (6b6eef9) |
+| Thu 2026-12-03 18:00 | 012-bluetooth-trackers | evergreen (share) | in production | — | new 2026-11-26; owner schedules in YouTube Studio |
+| Fri 2026-12-04 18:00 | 013-dark-mode | evergreen (search) | in production | — | new 2026-11-26; owner schedules in YouTube Studio |
 
 **Production batches:** Mon and Thu (scheduled task 09:13). Extra batch
 003–005 produced on 2026-11-22 for the switch to daily posting. Next batch:
