@@ -7,7 +7,7 @@ never usernames or comment texts in this public repo.
 
 | What | When | Who / where |
 |---|---|---|
-| Follower snapshot | every day, in the daily publish run (17:56) | `followers.csv` (Instagram gives no follower history, so we must snapshot it ourselves) |
+| Follower snapshot | every day, in the daily publish run (17:59) | `followers.csv` (Instagram gives no follower history, so we must snapshot it ourselves) |
 | **72 h pull** | in the publish run **3 days** after a Reel went live (age ≈ 71.5 h, same for every Reel) | `metrics.csv`, label `72h`; the result vs. our median goes into the daily status message |
 | **7 d pull** | in the publish run **7 days** after (age ≈ 167.5 h) | `metrics.csv`, label `7d` |
 | **Report** | every second Monday in the batch run, first on **Mon 2026-12-07** | `reports/<date>.md`; its decisions feed the next topics and experiments |

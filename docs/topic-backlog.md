@@ -24,8 +24,8 @@ to Fri–Sun slots (T3).
 ## Queue priority
 
 Published: 001 AirDrop, 002 QR code, 003 Tap-to-pay, 004 Wi-Fi in the
-kitchen. Ready and scheduled (see `docs/schedule.md`): 006 Song
-recognition · 005 Face ID · 007 Cold battery · 011 Flight tracking (Sun
+kitchen, 006 Song recognition. Ready and scheduled (see `docs/schedule.md`):
+005 Face ID · 007 Cold battery · 011 Flight tracking (Sun
 29.11, Thanksgiving return travel) · 009 Package tracking · 010 Login codes ·
 008 Noise cancelling (moved to Wed 2.12) · 012 Bluetooth trackers · 013 Dark
 mode (batch 2026-11-26).
@@ -65,7 +65,7 @@ takes the next 18:00 slot.
 | 07 | idea | How does Bluetooth not get confused? | It changes channel 1,600 times a second. | A signal hops between 79 channels. | Bluetooth Classic: 79 × 1 MHz channels, 1,600 hops/s. Bluetooth LE differs (40 channels), so say which one. | share |
 | 08 | produced (Reel 007) | Why does your phone die faster in the cold? | The battery isn't empty; the charge is stuck. | Lithium ions slow down as if moving through syrup. | Li-ion internal resistance rises and ion mobility drops in the cold; capacity returns once warm. | search |
 | 09 | idea ★ | How does your phone know where you are… indoors? | GPS satellites don't know you exist; your phone only listens. | Satellites broadcast, the phone times the signals, Wi-Fi helps inside. | GPS is receive-only; a fix needs ≥4 satellites (position + time); indoor fixes use Wi-Fi/cell positioning. | share |
-| 10 | produced (Reel 006) | How does an app recognise a song in 3 seconds? | It ignores almost all of the music. | A spectrogram shrinks to its peaks: the "fingerprint". | Audio fingerprinting with spectrogram peak pairs (Wang 2003 paper). Name no app on screen. | share |
+| 10 | published (Reel 006) | How does an app recognise a song in 3 seconds? | It ignores almost all of the music. | A spectrogram shrinks to its peaks: the "fingerprint". | Audio fingerprinting with spectrogram peak pairs (Wang 2003 paper). Name no app on screen. | share |
 | 11 | idea | How does a touchscreen know it's your finger? | That's why it fails with gloves on. | A sensor grid; the finger bends the electric field. | Projected capacitive sensing; gloves insulate; conductive gloves work. | search |
 | 12 | idea ★ | How does wireless charging work without touching? | There's still a "wire": a magnetic field. | Two coils, field lines jump between them. | Inductive coupling between coils (Qi standard, Wireless Power Consortium). | search |
 | 13 | idea | What happens when you hit "send" on a message? | Not even the server can read it. | A message is scrambled, travels as gibberish, unlocks only at the end. | Only true for end-to-end encrypted apps; say so. Public-key basics. | share |
@@ -90,3 +90,4 @@ takes the next 18:00 slot.
 | 02 | `reels/002-qr-code` | published 2026-11-23 | Old slow-voice version (kept as a comparison point). |
 | 03 | `reels/003-tap-to-pay` | published 2026-11-24 | Instagram 18:55 (worker restart); YouTube upload by hand (Zapier 429). |
 | 04 | `reels/004-wifi-kitchen` | published 2026-11-25 | Instagram 20:40 (worker restart); YouTube 18:00 (scheduled by owner). |
+| 10 | `reels/006-song-recognition` | published 2026-11-26 | Instagram 19:15 (worker restart); YouTube 18:00 (scheduled by owner). |

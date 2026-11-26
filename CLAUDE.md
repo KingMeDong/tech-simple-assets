@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.5 · **Last updated:** 2026-11-25
+**Version:** v1.6 · **Last updated:** 2026-11-26
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -231,8 +231,9 @@ playbook explains them.
   - All hard rules and the full pre-publish checklist still apply.
 - **Scheduled tasks** (set up 2026-11-22 with the owner's go; they fire into
   the main Claude session, times in German time):
-  - **Daily Reel publish, 17:56** (was 17:31 until 2026-11-25): checks and
-    waits only a few minutes, then publishes today's
+  - **Daily Reel publish, 17:59** (17:31 until 2026-11-25, then 17:56):
+    checks the URLs and publishes **at once, without waiting and without
+    ending the turn first**, today's
     Reel on Instagram if `docs/schedule.md` marks it `ready` or `approved` and
     the owner hasn't vetoed it, then checks that the owner's scheduled Short
     went live on YouTube. Then it updates the log,
@@ -525,3 +526,9 @@ analytics/                publishing log, metrics.csv, followers.csv,
   row: 002 +29 min, 003 +55 min). The owner's scheduled YouTube Short went
   live on time at 18:00. The daily publish task now starts at **17:56**, so
   the wait before 18:00 is about 3 minutes instead of 29.
+- **2026-11-26 · v1.6:** Reel 006 went live on Instagram at 19:15: the
+  worker restarted again right after the 3-minute wait (fourth delay in a
+  row; every one came after the run ended its turn to wait in the
+  background). The owner's scheduled YouTube Shorts were on time both days.
+  The publish task now fires at **17:59** and publishes immediately, with no
+  background wait (about one minute early is fine).
