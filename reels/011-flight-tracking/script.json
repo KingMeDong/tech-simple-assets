@@ -1,0 +1,26 @@
+{
+  "id": "011-flight-tracking",
+  "title": "How your phone knows where a plane is",
+  "series": "How it actually works #11",
+  "segments": [
+    {"id": "hook", "text": "How does your phone know where a plane is right now?", "pause": 0.25},
+    {"id": "twist", "text": "The plane gives itself away. It broadcasts its own position, once a second.", "pause": 0.4},
+    {"id": "s1", "text": "Step one: the plane works out where it is from GPS satellites.", "pause": 0.35},
+    {"id": "s2", "text": "Step two: a radio onboard sends that out, with its altitude, speed and ID.", "pause": 0.35},
+    {"id": "s3a", "text": "Step three: receivers on the ground pick it up. Some are run by hobbyists at home.", "pause": 0.3},
+    {"id": "s3b", "text": "Over the ocean, receivers on satellites can catch it too.", "pause": 0.35},
+    {"id": "s4", "text": "Flight tracking apps gather these signals and show each plane on your map.", "pause": 0.35},
+    {"id": "pay", "text": "And in the US, it's now air traffic control's preferred way to track planes.", "pause": 0.35},
+    {"id": "cta", "text": "Save this for your next flight.", "pause": 0.1}
+  ],
+  "end_card_seconds": 0.6,
+  "sources": [
+    "FAA Flight Standards, ADS-B page, https://www.faa.gov/about/office_org/headquarters_offices/avs/offices/afx/afs/afs400/afs410/ads-b : 'ADS-B Out works by broadcasting information about an aircraft's GPS location, altitude, ground speed and other data to ground stations and other aircraft, once per second.'",
+    "14 CFR 91.227(d), eCFR https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-91/subpart-C/section-91.227 : minimum broadcast message set includes latitude and longitude, barometric pressure altitude, velocity, aircraft identification (flight plan / ATC call sign) and the ICAO 24-bit address.",
+    "14 CFR 91.225, eCFR https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-91/subpart-C/section-91.225 : ADS-B Out required after January 1, 2020 in Class A airspace and (below 18,000 ft MSL) in Class B and C airspace, Class E at and above 10,000 ft MSL in the 48 contiguous states (excluding at and below 2,500 ft above the surface), and other listed areas.",
+    "FAA ADS-B overview, https://www.faa.gov/air_traffic/technology/adsb : 'Real-time ADS-B is now the preferred method of surveillance for air traffic control in the NAS' (NAS = U.S. National Airspace System).",
+    "FAA ADS-B FAQ, https://www.faa.gov/air_traffic/technology/adsb/faq : ADS-B moves 'from ground radar and navigational aids to precise tracking using satellite signals'; ground stations are 'so much easier to place than radar'.",
+    "FlightAware ADS-B, https://www.flightaware.com/adsb/ : 'FlightAware operates a worldwide network of ADS-B and Mode S receivers'; users can 'build a Raspberry Pi with a USB ADS-B receiver' and 'feed additional ADS-B data from their receivers'; it also receives 'over 45 different government air traffic control and private datalink sources'. FlightFeeder page, https://www.flightaware.com/adsb/flightfeeder/ : receivers provided 'free of charge to qualified individuals who agree to host them' ('To volunteer to host a FlightFeeder').",
+    "Aireon, https://aireon.com/ : 'Powered by Iridium's networked constellation of 66 satellites, Aireon ADS-B provides continuous air traffic surveillance to areas of the world that previously had no access to this information, including over oceans'."
+  ]
+}

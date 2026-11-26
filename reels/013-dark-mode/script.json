@@ -1,0 +1,54 @@
+{
+  "id": "013-dark-mode",
+  "title": "Does dark mode really save battery?",
+  "series": "How it actually works #13",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Does dark mode really save battery?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "On some screens, it barely makes a difference.",
+      "pause": 0.35
+    },
+    {
+      "id": "lcd",
+      "text": "Many older phones use LCD screens. A backlight shines behind the whole screen, and the pixels just block the light. So even black costs power.",
+      "pause": 0.35
+    },
+    {
+      "id": "oled",
+      "text": "Many newer phones use OLED. Here, every pixel makes its own light, and a black pixel is simply switched off.",
+      "pause": 0.35
+    },
+    {
+      "id": "study",
+      "text": "So how much does that save? University researchers measured it on OLED phones.",
+      "pause": 0.3
+    },
+    {
+      "id": "low",
+      "text": "At normal indoor brightness, dark mode saved only about three to nine percent.",
+      "pause": 0.3
+    },
+    {
+      "id": "high",
+      "text": "At full brightness, about forty percent.",
+      "pause": 0.35
+    },
+    {
+      "id": "pay",
+      "text": "So dark mode pays off most in bright sunlight. Indoors, turning your brightness down can save just as much.",
+      "pause": 0.35
+    },
+    {
+      "id": "cta",
+      "text": "Is your phone in dark mode right now?",
+      "pause": 0.1
+    }
+  ],
+  "end_card_seconds": 0.6,
+  "sources": []
+}

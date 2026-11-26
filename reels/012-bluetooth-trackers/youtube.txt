@@ -1,0 +1,13 @@
+TITLE:
+How does a Bluetooth tracker find your lost keys with no GPS?
+
+DESCRIPTION:
+How does a Bluetooth tracker find your lost keys, with no GPS?
+Your tracker only sends a short Bluetooth signal. When a stranger walks by, their phone hears it, locks its own location so only you can open it, and sends it up in the background. Not even the company running the network can read it, and you never learn who helped. Your phone unlocks it and drops a pin.
+Send this to someone who always loses their keys.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+Sources: Apple Platform Security guide (Find My), Apple AirTag page and newsroom, Google Online Security Blog (Find Hub network).
+#techexplained #bluetooth #howitworks
+
+VIDEO FILE (jsDelivr, pinned):
+https://cdn.jsdelivr.net/gh/KingMeDong/tech-simple-assets@COMMIT_SHA/reels/012-bluetooth-trackers/video.mp4

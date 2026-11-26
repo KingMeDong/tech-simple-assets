@@ -1,0 +1,55 @@
+{
+  "id": "012-bluetooth-trackers",
+  "title": "How a Bluetooth tracker finds your lost keys",
+  "series": "How it actually works #12",
+  "segments": [
+    {
+      "id": "hook",
+      "text": "How does a Bluetooth tracker find your lost keys, with no GPS?",
+      "pause": 0.3
+    },
+    {
+      "id": "twist",
+      "text": "Strangers' phones do the finding, quietly, in the background.",
+      "pause": 0.4
+    },
+    {
+      "id": "s1",
+      "text": "Step one: your tracker keeps sending out a short Bluetooth signal. It has no GPS of its own.",
+      "pause": 0.4
+    },
+    {
+      "id": "s2",
+      "text": "Step two: a stranger walks past, and their phone hears it. That phone knows where it is.",
+      "pause": 0.4
+    },
+    {
+      "id": "s3",
+      "text": "Step three: it locks that location in a box only you can open, and sends it up to the network.",
+      "pause": 0.3
+    },
+    {
+      "id": "s3b",
+      "text": "Not even the company behind the network can open it. And you never learn whose phone helped.",
+      "pause": 0.4
+    },
+    {
+      "id": "pay",
+      "text": "Your phone unlocks the box and drops a pin where your keys were seen. Each network counts over a billion devices, so a busy cafe is full of helpers.",
+      "pause": 0.3
+    },
+    {
+      "id": "cta",
+      "text": "Send this to someone who always loses their keys.",
+      "pause": 0.1
+    }
+  ],
+  "end_card_seconds": 0.05,
+  "sources": [
+    "Apple Platform Security guide, Find My security, https://support.apple.com/guide/security/find-my-security-sec6cbc80fd0/web: 'Find My works offline by sending out short range Bluetooth signals from the missing device that can be detected by other Apple devices in use nearby. Those nearby devices then relay the detected location of the missing device to iCloud'; 'This entire interaction is end-to-end encrypted, anonymous'; 'Apple doesn't know who the finder is or whose device has been found'; 'The device owner receives only the encrypted location information ... with no indication as to who found the device'; public key replaced 'approximately every 15 minutes'",
+    "Apple Platform Security guide, Locating missing devices, https://support.apple.com/guide/security/locating-missing-devices-sece994d0126/web: finder devices 'encrypt their current location information and relay it to Apple'; 'Apple never has the decryption key, so Apple can't read the location encrypted by the finder'; the owner's app 'locally decrypts the encrypted locations ... and shows an approximate location'; 'Location reports from multiple finder devices are combined'; offline finding can be turned off in settings",
+    "Apple AirTag page, https://www.apple.com/airtag/: 'Your AirTag sends out a secure Bluetooth signal that can be detected by nearby devices in the Find My network. These devices send the location of your AirTag to iCloud — then you can go to the Find My app and see it on a map. The whole process is anonymous and encrypted'; 'the Find My network can leverage more than a billion iPhone, iPad, and Mac devices'; tech specs list Bluetooth, Ultra Wideband, NFC, speaker, accelerometer (no GPS)",
+    "Apple Newsroom, Apple introduces AirTag (2021-04-20), https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/: the network 'can detect Bluetooth signals from a lost AirTag and relay the location back to its owner, all in the background, anonymously and privately'; 'only the owner of a device has access to its location data, and no one, including Apple, knows the identity or location of any device that helped find it'",
+    "Google Online Security Blog, How we built the new Find Hub network with user security and privacy in mind, https://security.googleblog.com/2024/04/find-my-device-network-security-privacy-protections.html: 'Imagine you drop your keys at a cafe. The keys themselves have no location capabilities, but they may have a Bluetooth tag attached. Nearby Android devices participating in the Find Hub network report the location of the Bluetooth tag'; 'Location data is end-to-end encrypted ... Google cannot decrypt, see, or otherwise use the location data'; reports are made 'in a manner that does not allow Google to identify the owners of the nearby Android devices'; 'over a billion Android devices that can participate'; the network 'is most valuable in public settings like cafes and airports, where there are likely many devices nearby'; by default several nearby devices must detect a tag before its location is shown"
+  ]
+}

@@ -1,0 +1,5 @@
+How does your phone know where a plane is right now?
+Planes with ADS-B Out work out their own position from GPS and broadcast it once a second, along with altitude, speed and ID. Receivers on the ground, some run by hobbyists at home, and on satellites pick it up, and flight tracking apps put it on your map. In the US, it's now air traffic control's preferred way to track planes.
+Save this for your next flight.
+Voice: AI text-to-speech. Script written and fact-checked by a human.
+#techexplained #aviation #howitworks
