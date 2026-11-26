@@ -48,6 +48,9 @@ takes the next 18:00 slot.
 | 2026-11-25 | TikTok outage in the US, about 90 min on 24 Nov (Downdetector reports) | Why does an app suddenly stop working for everyone? | No official cause or status page entry | **no**: cause unconfirmed (no speculation), short and already over |
 | 2026-11-25 | Spotify login problems worldwide, morning of 24 Nov | — | Spotify only said it was "aware of issues"; status page showed no incident | **no**: no confirmed cause, nothing to explain without guessing |
 | 2026-11-25 | WhatsApp "view-once" text messages reach iPhone beta testers | How can a message stop you taking a screenshot? | Beta reports only, no official WhatsApp announcement | **no**: beta/leak stage, not in most people's hands; revisit if WhatsApp announces it |
+| 2026-11-26 | Allstate website and app down for several days (US insurer) | — | TechCrunch report; no official cause | **no**: no confirmed cause, one company's IT failure, brand-bashing risk |
+| 2026-11-26 | US Thanksgiving travel peak (Tue 24 Nov to Mon 30 Nov); many people track flights in apps | How does your phone know where a plane is right now? | FAA ADS-B pages (aircraft broadcast their own GPS position; ADS-B Out required in most controlled US airspace since 2020) | **later**: seasonal habit, not a news event; candidate for today's batch with a return-travel slot (Sun 29 Nov) if it fits without moving many scheduled Shorts |
+| 2026-11-26 | Threads app for iPad; Meta AI features in Instagram DMs | — | Meta announcements | **no**: feature news, no clear "how does it work?" answer |
 
 ## Ideas
 
