@@ -52,6 +52,9 @@ takes the next 18:00 slot.
 | 2026-11-26 | Allstate website and app down for several days (US insurer) | — | TechCrunch report; no official cause | **no**: no confirmed cause, one company's IT failure, brand-bashing risk |
 | 2026-11-26 | US Thanksgiving travel peak (Tue 24 Nov to Mon 30 Nov); many people track flights in apps | How does your phone know where a plane is right now? | FAA ADS-B pages (aircraft broadcast their own GPS position; ADS-B Out required in most controlled US airspace since 2020) | **later**: seasonal habit, not a news event; **produced** as Reel 011 for Sun 2026-11-29 (008 moved to Wed 2.12) |
 | 2026-11-26 | Threads app for iPad; Meta AI features in Instagram DMs | — | Meta announcements | **no**: feature news, no clear "how does it work?" answer |
+| 2026-11-27 | Black Friday: forecast record US online sales (Adobe: $12.9 bn) | How do shopping sites survive a traffic spike? | Adobe forecast (a forecast, not a tech fact); no primary source for how specific shops handle load | **no** for the fast lane: our seasonal Reel 009 (package tracking) already runs on Cyber Monday 30 Nov; "traffic spikes" stays an evergreen idea |
+| 2026-11-27 | Thanksgiving flight delays (storms); airline IT failures earlier in November | — | DOT statement (weather is the main cause); IT failures older than 48 h | **no**: weather is not tech, and the IT failures are old; Reel 011 (flight tracking) runs Sun 29 Nov |
+| 2026-11-27 | November Pixel Drop features in the news | — | Google blog (10 Nov) | **no**: older than 48 h, one brand's feature list |
 
 ## Ideas
 
