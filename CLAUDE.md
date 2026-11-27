@@ -1,6 +1,6 @@
 # tech.simple.explained — Workflow
 
-**Version:** v1.6 · **Last updated:** 2026-11-26
+**Version:** v1.6 · **Last updated:** 2026-11-27
 
 This file is the single source of truth for how we run the channel. Every
 Claude session reads it first and follows it. The owner has delegated content
@@ -532,3 +532,8 @@ analytics/                publishing log, metrics.csv, followers.csv,
   background). The owner's scheduled YouTube Shorts were on time both days.
   The publish task now fires at **17:59** and publishes immediately, with no
   background wait (about one minute early is fine).
+- **2026-11-27 · v1.6:** Reel 005 went live on Instagram at 19:58 although
+  the run published without any wait: the worker restarted right after the
+  URL check, before the publish call, and came back about an hour later.
+  Fifth Instagram delay in a row (29, 55, 160, 75, 118 min); the owner's
+  scheduled YouTube Shorts were on time every day. Options are with the owner.
