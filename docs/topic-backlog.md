@@ -55,6 +55,8 @@ takes the next 18:00 slot.
 | 2026-11-27 | Black Friday: forecast record US online sales (Adobe: $12.9 bn) | How do shopping sites survive a traffic spike? | Adobe forecast (a forecast, not a tech fact); no primary source for how specific shops handle load | **no** for the fast lane: our seasonal Reel 009 (package tracking) already runs on Cyber Monday 30 Nov; "traffic spikes" stays an evergreen idea |
 | 2026-11-27 | Thanksgiving flight delays (storms); airline IT failures earlier in November | — | DOT statement (weather is the main cause); IT failures older than 48 h | **no**: weather is not tech, and the IT failures are old; Reel 011 (flight tracking) runs Sun 29 Nov |
 | 2026-11-27 | November Pixel Drop features in the news | — | Google blog (10 Nov) | **no**: older than 48 h, one brand's feature list |
+| 2026-11-28 | Lloyds Bank and Bank of Scotland apps down on Black Friday (UK payday), restored the same day | — | Bank statements gave no cause | **no**: no confirmed cause, banking (money) and brand-bashing risk |
+| 2026-11-28 | Google adds admin controls for AI agents in Gmail and Drive (Workspace) | — | Newsletter report; Google Workspace admin docs to check | **no**: admin/enterprise feature, not something most people use |
 
 ## Ideas
 
