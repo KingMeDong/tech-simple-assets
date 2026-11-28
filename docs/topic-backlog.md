@@ -30,8 +30,9 @@ kitchen, 006 Song recognition, 005 Face ID. Ready and scheduled (see
 008 Noise cancelling (moved to Wed 2.12) · 012 Bluetooth trackers · 013 Dark
 mode (batch 2026-11-26).
 
-Next (batch Mon 2026-11-30, natural voice, livelier first second): **#09
-Indoor location** · **#18 Portrait mode** · **#12 Wireless charging**.
+Next (batch Mon 2026-11-30, natural voice, livelier first second): **#24
+Ctrl+Z / undo (owner's idea)** · **#09 Indoor location** · **#18 Portrait
+mode**; then #12 Wireless charging.
 
 ## Topical lane
 
@@ -84,6 +85,7 @@ takes the next 18:00 slot.
 | 21 | idea | Does a microwave cook food from the inside out? | No: it heats the outer few centimetres, then heat travels inward. | Cross-section of a potato: an orange layer near the surface, warmth slowly spreading to the cold centre. | FDA "Microwave oven radiation" page (penetration depth / heating). No health claims. | search |
 | 22 | idea | How does an eSIM work without a SIM card? | Your SIM card was always just a tiny computer. | A SIM card shrinks into a chip on the circuit board; a QR code downloads a profile into it. | GSMA eSIM specifications (SGP.22, remote SIM provisioning). | search |
 | 23 | idea | How does the "I'm not a robot" box know you're human? | The click isn't the test. What you did before it is. | A cursor path: a human's wobbly line vs. a bot's straight jump; the check mark appears. | Google reCAPTCHA developer docs (risk analysis, signals). Keep claims to what Google states. | share |
+| 24 | idea ★ (owner) | How does Ctrl+Z know what you just did? | Your computer doesn't keep old copies of your work; it keeps a list of what you did, and undo plays it backwards. Type something new after undoing, and your redo is gone. | A stack of action cards ("typed 'hello'", "made bold", "deleted line"); each Ctrl+Z pops the top card and reverses it; a new action throws the redo pile in the bin. Generic keyboard and document, no app logos. | Undo/redo stacks and "register the inverse action": Apple UndoManager docs, Microsoft docs; app-specific limits (e.g. a program's documented number of undo steps) only with that program's own docs; say "most apps" where apps differ (some store snapshots). Mention Cmd+Z on Mac. Origin story (Xerox PARC) only with a primary source such as the Computer History Museum. | share |
 
 ★ = in the queue priority above.
 
